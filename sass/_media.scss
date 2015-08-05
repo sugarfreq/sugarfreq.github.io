@@ -1,0 +1,217 @@
+//_media.scss
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media screen and (min-width: 50px) and (max-width: 1000px){
+  #header ul {
+    display: none;
+  }
+
+  #social-footer{
+    display: block;
+  }
+
+  #social-footer ul li{
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 50px) and (max-width: 940px){
+    /* Style adjustments for viewports that meet the condition */
+  
+  .container {
+    width: 100%;
+  }
+
+  .image-section {
+    height: auto;
+  }
+
+  .image-section p.txt_rt, .image-section p.txt_lt {
+      position: static;
+      display: block;
+      margin: 0 auto;
+      padding-top: 30px;
+    }
+
+  .image-section img.img_rt, .image-section img.img_lt {
+    position: static;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+
+  .text-section {
+    height: auto;
+  }
+
+  .text-section .container{
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .text-section .txt{
+    position: static;
+    text-align: center;
+    padding: 50px;
+  }
+
+  .text-section #code-p.txt{
+    padding-top: 20px;
+  }
+
+  #create-p, #design-p, #code-p {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  #html p, #css p, #js p{
+    display: inline-block;
+  }
+
+  #html, #css, #js{
+    display: inline-block;
+    position: static;
+    padding: 20px 20px 0 20px;
+  }
+
+  #temp1, #temp5, #temp6{
+    display: inline-block;
+    position: static;
+    padding-bottom: 30px;
+  }
+
+  #design.text-section img{
+    transition: none;
+  }
+
+  #design.text-section img:hover{
+    width: 200px;
+    height: 171px;
+  }
+
+  #last.image-section .container {
+    padding: 50px 0;
+  }
+
+  #last.image-section img.img_lt{
+    display: none;
+  }
+
+  form.wufoo  {
+    display: block;
+    position: static;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  input.medium, select.medium{
+    width: 100%;
+  }
+
+
+}
+
+@media screen and (min-width: 50px) and (max-width: 608px){
+    /* Style adjustments for viewports that meet the condition */
+  #temp6{
+    display: none;
+  }
+
+}
+
+@media screen and (min-width: 50px) and (max-width: 413px){
+    /* Style adjustments for viewports that meet the condition */
+  #temp5{
+    display: none;
+  }
+
+  form.wufoo {
+    width: 300px;
+  }
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

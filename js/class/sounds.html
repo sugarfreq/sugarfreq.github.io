@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+    if (window.HTMLAudioElement) {
+      var audio = document.createElement('audio');
+
+      if (audio.canPlayType('audio/mpeg').length > 0){
+        audio.setAttribute('src','sounds/whoosh.mp3');
+
+      } 
+
+      if (audio.canPlayType('audio/ogg; codecs="vorbis"').length > 0){
+        audio.setAttribute('src', 'sounds/whoosh.ogg');
+
+      }
+    }
+
+    function playsound(){
+      if (window.audio) {
+        audio.play();
+      }
+    }
+    </script>
+ </head>
+<body>
+  <button onclick="playsound()">Sample</button>
+</body>
+</html>

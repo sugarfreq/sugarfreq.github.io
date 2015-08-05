@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search My Site</title>
+    <script>
+      function search(){
+          //create variable for url to be searched
+          var site = "wikipedia.org";
+          //get value user typed in
+          var lookfor = document.getElementById("txtlookfor").value;
+
+          //do the search (dooo iiiiiit!)
+          if (lookfor.length > 0) {
+            //get value for search engine preferences
+            var searchpref = document.getElementById("search_engine").value;
+
+            //set search engine
+            if (searchpref == 1){
+              //build url for search
+              var query = "http://www.google.com/search?q=" + encodeURIComponent(lookfor) + " site:" + site;
+            } else if (searchpref == 2){
+              //build url for search
+              var query = "http://www.bing.com/search?q=" + encodeURIComponent(lookfor) + " site:" + site;
+            } else {
+              //build url for search
+              var query = "http://www.yahoo.com/search?q=" + encodeURIComponent(lookfor) + " site:" + site;
+            }
+
+              //set address bar equal to query
+              location.href=query;
+          } else {
+            //alert user of empty query
+            alert("Please type the word or words for which you want to search.")
+          }
+
+      }
+    </script>
+ </head>
+<body>
+    <p>Search this site:
+        <input type="text" id="txtlookfor" autofocus>
+        <!--Show Seach Engine Options-->
+        &nbsp;Choose engine: 
+        <select id="search_engine">
+          <option value="1">Google</option>
+          <option value="2">Bing</option>
+          <option value="3">Yahoo</option>
+        </select>
+        <input type="button" onclick="search()" value="Go">
+    </p>
+</body>
+</html>

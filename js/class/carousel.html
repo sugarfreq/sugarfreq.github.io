@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carousel</title>
+    <style>
+    /* CSS code to style the pictures */
+    .carousel {
+      text-align: center;
+    }
+    #bigpic {
+      height: 400px;
+    }
+    .thumbs img {
+      height: 75px;
+    }
+    </style>
+    <script>
+    //The maximages global variable must equal the number of thumbnails in the gallery.
+    var maximages = 10;
+    //Folder name and start of file name of each image file.
+    var startpath = "pix3/birds"
+    //Filename extension of each image.
+    var extension = ".png"
+
+    function showbig(pic){
+      document.getElementById("bigpic").src = pic;
+    }
+
+    function calcslide(x){
+      var currentImage = document.getElementById("bigpic").src;
+      var fileExtension = currentImage.indexOf(extension);
+      var imgNumber = currentImage.substr(fileExtension - 2, 2);
+      var newNumber = parseInt(imgNumber) + x;
+      
+      if (newNumber < 1){
+        newNumber = maximages;
+      }
+
+      if (newNumber > maximages){
+        newNumber=1;
+      }
+
+      var newImageNumber = ("0" + newNumber).slice(-2);
+
+      var newImage = startpath + newImageNumber + extension;
+
+      showbig(newImage);
+    }
+    </script>
+ </head>
+<body>
+  <div class="carousel">
+    <img src="pix3/LeftArrow.png" alt="Previous" onclick="calcslide(-1)" >
+    <img src="pix3/birds01.png" alt="" id="bigpic">
+    <img src="pix3/RightArrow.png" alt="Previous" onclick="calcslide(1)" >
+    <div class="thumbs">
+      <img src="pix3/birds01.png" alt="" onclick="showbig(this.src)">
+      <img src="pix3/birds02.png" alt="" onclick="showbig(this.src)">
+      <img src="pix3/birds03.png" alt="" onclick="showbig(this.src)">
+      <img src="pix3/birds04.png" alt="" onclick="showbig(this.src)">
+      <img src="pix3/birds05.png" alt="" onclick="showbig(this.src)"><br />
+      <img src="pix3/birds06.png" alt="" onclick="showbig(this.src)">
+      <img src="pix3/birds07.png" alt="" onclick="showbig(this.src)">
+      <img src="pix3/birds08.png" alt="" onclick="showbig(this.src)">
+      <img src="pix3/birds09.png" alt="" onclick="showbig(this.src)">
+      <img src="pix3/birds10.png" alt="" onclick="showbig(this.src)">
+    </div><!-- End thumbs -->
+ </div><!-- End carousel -->
+  
+</body>
+</html>

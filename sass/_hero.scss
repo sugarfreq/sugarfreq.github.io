@@ -1,0 +1,163 @@
+// _image-section.scss
+
+#first {
+  margin-top: 75px;
+  height: 100%;
+}
+
+.image-section p.txt_lt+p{
+  top: 140px;
+  width: 70%;
+
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.image-section{
+  width: 100%;
+  height: 630px;
+  background: url('../img/bkgrd.jpg') $lt_blue no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+
+  color: $dk_blue;
+  font-size: 1.7em;
+}
+
+.image-section p{
+  font-weight: $ft_bold;
+}
+
+.image-section img{
+  max-width: 100%;
+}
+
+.image-section p.txt_lt{
+  position: absolute;
+  top: 90px;
+  left: 130px;
+  }
+
+.image-section img.img_rt{
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.image-section p.txt_rt{
+  position: absolute;
+  top: 90px;
+  right: 130px;
+  }
+
+.image-section img.img_lt{
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+#last.image-section p.txt_rt{
+  right: 272px;
+}
+
+#last.image-section img.img_lt{
+   left:0;
+}
+
+#last.image-section p.sub_txt{
+  top: 145px;
+  font-weight: $ft_light;
+  font-size: 0.7em;
+  right: 248px;
+}
+
+.skill {
+  display: inline-block;
+  width: 100px;
+  background: $dk_blue;
+  color: #fff;
+  text-align: center;
+  font-weight: $ft_light;
+
+  padding: 10px 10px;
+}
+
+#social-footer{
+  background-color: $dk_blue;
+  color: #fff;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#social-footer ul{
+  width: 400px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+#social-footer a{
+  text-decoration: none;
+  color: #fff;
+  margin: 20px;
+}
+
+//resume styles
+
+#content{
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 20px;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+#resume.image-section .container{
+  padding: 20px 0;
+}
+
+#resume.image-section{
+  margin-top:75px;
+
+  text-align: left;
+  font-family: $fonts;
+
+  height: auto;
+}
+
+#resume.image-section h1, #resume.image-section h2, #resume.image-section h3, #resume.image-section p, #resume.image-section ul li{
+  font-weight: $ft_light;
+}
+
+#resume.image-section h2{
+  background-color: $dk_blue;
+  color: #fff;
+
+  padding: 10px;
+
+  border-radius: 20px;
+}
+
+#resume.image-section h3{
+  margin: 0.7em 0;
+}
+
+#resume.image-section p, #resume.image-section ul li{
+  color: #6F6F6F;
+}
+
+.resume{
+  padding: 10px;
+}
+
+#res-skills.resume{
+  padding-top: 30px;
+}
+
+.int-res{
+  margin-left: 40px;
+}

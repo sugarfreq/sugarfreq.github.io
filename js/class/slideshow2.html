@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slideshow</title>
+  <style>
+    /* CSS code to style the picture container and images */
+    #slideshow {
+      /* Height of box should roughly match image heights */
+      height: 375px;
+      text-align: center;
+    }
+    /* Size each image to fit container height */
+    #slideshow img {
+      height: 100%;
+    }
+
+    .fadein {
+      opacity: 1;
+      transition: all ease-out 0.25s;
+    }
+
+    .fadeout {
+      opacity: 0;
+      transition: all ease-out 0.25s;
+    }
+  </style>
+  <script>
+    var subscript = 0;
+    var pictime = 5;
+
+    var images = [
+        "pix3/candle.jpg",
+        "pix3/chip.jpg",
+        "pix3/fire.png",
+        "pix3/paint.png",
+        "pix3/water.png"];
+
+    function nextImg(){
+      var img = document.getElementById("slideimg");
+      img.className = "fadeout";
+      setTimeout("newimg()", 250);
+    }
+
+    function newimg() {
+      subscript = (subscript == images.length - 1) ? 0 : subscript+1;
+      var imagefile = images[subscript];
+      var img = document.getElementById("slideimg");
+      img.className = "fadein";
+      img.src = imagefile;
+
+    }
+
+    window.onload = function() {
+      var stimer = setInterval("nextImg()", pictime * 1000);
+    }
+
+    
+  </script>
+</head>
+<body>
+  <!-- HTML to display the pictures -->
+  <div id="slideshow">
+    <img id="slideimg" src="pix3/candle.jpg"  alt="">
+  </div><!-- End slideshow div -->
+</body>
+</html> 
