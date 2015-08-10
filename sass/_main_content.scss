@@ -50,65 +50,97 @@ iframe{
 }
 
 aside {
-  display: none;
-  background-color: #fff;
-  background-attachment: fixed;
-  position: absolute;
+  display: block;
+  background-color: $lt_blue;
+  position: fixed;
   right: 0;
-  top: 75px;
+  top: 0;
 
   width: 30%;
-  height: 100%;
 
-  box-shadow: -2px 2px 5px rgba(0,0,0,0.5);
+  z-index: 999999;
 
-  overflow: hidden;
-  z-index: 100;
-
-  iframe{
-    top: 0;
-  }
-}
-
-#aside_iframe{
-  color: $dk_blue;
+  
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 
+  p{
+    display: inline-block;
+    width: 50%;
+    color: $dk_blue;
+    top: 0;
+  }
+
   img {
-    display: block;
-    width: 100%;
-    max-width: 300px;
+    display: inline-block;
+    width: 50%;
+    max-width: 150px;
     margin: 10px auto 0 auto;
   }
 
   h2{
+    display: inline-block;
     font-weight: $ft_norm;
     text-align: center;
     color: #fff;
     background-color: $dk_blue;
-    width: 100%;
-    padding: 10px 0;
+    width: 90%;
+    padding: 9px 0;
+    border-bottom:1px solid $gray;
+    font-size: 14px;
+  }
+
+  div{
+    display: none;
+  }
+
+  h3{
+    display: inline-block;
+    color: #fff;
+    width: 10%;
+    height: 38px;
+    padding: 6px;
+    background-color: $dk_blue;
+    vertical-align: top;
+    border-bottom:1px solid $gray;
   }
 }
 
-#nav_tab{
+a.button {
+  display: block;
+  background-color: $dk_blue;
+  color: #fff;
+  text-decoration: none;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  top: 200px;
+
+  margin: 0 auto;
+
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -ms-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+}
+
+a.button:hover{
+  background-color: $dk_gray;
+  color: #fff;
+}
+/*#nav_tab{
 position: absolute;
-top:75px;
-right: 0;
-width: 30px;
+top:45px;
+width: 154px;
 height: 30px;
 
-transform: rotate(90deg);
-
-background-color: $gray;
-color: $dk_blue;
+background-color: $dk_blue;
+color: #fff;
 padding: 4px;
 font-family: 'Open Sans', sans-serif;
+text-align: center;
 
-box-shadow: -1px 2px 1px rgba(0,0,0,0.5);
-
-border-bottom-left-radius: 20px; 
-z-index: 200;
-
-}
+}*/

@@ -299,52 +299,82 @@ iframe {
   top: 75px; }
 
 aside {
-  display: none;
-  background-color: #fff;
-  background-attachment: fixed;
-  position: absolute;
+  display: block;
+  background-color: #d4ecfb;
+  position: fixed;
   right: 0;
-  top: 75px;
+  top: 0;
   width: 30%;
-  height: 100%;
-  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  z-index: 100; }
-  aside iframe {
-    top: 0; }
-
-#aside_iframe {
-  color: #1185d7;
+  z-index: 999999;
   font-family: 'Open Sans', sans-serif;
   text-align: center; }
-  #aside_iframe img {
-    display: block;
-    width: 100%;
-    max-width: 300px;
+  aside p {
+    display: inline-block;
+    width: 50%;
+    color: #1185d7;
+    top: 0; }
+  aside img {
+    display: inline-block;
+    width: 50%;
+    max-width: 150px;
     margin: 10px auto 0 auto; }
-  #aside_iframe h2 {
+  aside h2 {
+    display: inline-block;
     font-weight: 400;
     text-align: center;
     color: #fff;
     background-color: #1185d7;
-    width: 100%;
-    padding: 10px 0; }
+    width: 90%;
+    padding: 9px 0;
+    border-bottom: 1px solid #b5b4b4;
+    font-size: 14px; }
+  aside div {
+    display: none; }
+  aside h3 {
+    display: inline-block;
+    color: #fff;
+    width: 10%;
+    height: 38px;
+    padding: 6px;
+    background-color: #1185d7;
+    vertical-align: top;
+    border-bottom: 1px solid #b5b4b4; }
 
-#nav_tab {
-  position: absolute;
-  top: 75px;
-  right: 0;
-  width: 30px;
+a.button {
+  display: block;
+  background-color: #1185d7;
+  color: #fff;
+  text-decoration: none;
+  width: 300px;
   height: 30px;
-  transform: rotate(90deg);
-  background-color: #b5b4b4;
-  color: #1185d7;
-  padding: 4px;
-  font-family: 'Open Sans', sans-serif;
-  box-shadow: -1px 2px 1px rgba(0, 0, 0, 0.5);
-  border-bottom-left-radius: 20px;
-  z-index: 200; }
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  top: 200px;
+  margin: 0 auto;
+  -webkit-transition: all 400ms ease-out;
+  -moz-transition: all 400ms ease-out;
+  -ms-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out; }
 
+a.button:hover {
+  background-color: #444343;
+  color: #fff; }
+
+/*#nav_tab{
+position: absolute;
+top:45px;
+width: 154px;
+height: 30px;
+
+background-color: $dk_blue;
+color: #fff;
+padding: 4px;
+font-family: 'Open Sans', sans-serif;
+text-align: center;
+
+}*/
 footer {
   display: none; }
 
