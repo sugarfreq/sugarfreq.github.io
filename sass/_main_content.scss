@@ -1,148 +1,114 @@
-// _text-section.scss
+/* ==========================================================================
+   _main-content
+   ========================================================================== */
 
-.text-section {
+
+main {
+  background: url('../img/bkgrd.jpg') $lt_blue no-repeat;
   width: 100%;
-  height: 600px;
+  height: 100%;
+  background: url('../img/bkgrd.jpg') $lt_blue no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
 
-  color: #6c6c6c;
-  font-size: 1em;
+  p {
+    font-family: 'Open Sans', sans-serif;
+    color: $dk_gray;
 
-  box-shadow: 0 0 10px #8C8B8B, 
-              0 0 10px #8C8B8B;
+    position: relative;
+    top: 140px;
 
-  z-index: 300;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  p:first-child {
+    font-size: 24px;
+    color: $dk_blue;
+    font-weight: $ft_bold;
+  }
+
+
+
+}
+
+.container {
+  width: 96%;
+  max-width: 1000px;
   position: relative;
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: 75px;
+}
+
+aside {
+  display: none;
+  background-color: #fff;
+  background-attachment: fixed;
+  position: absolute;
+  right: 0;
+  top: 75px;
+
+  width: 30%;
+  height: 100%;
+
+  box-shadow: -2px 2px 5px rgba(0,0,0,0.5);
 
   overflow: hidden;
-}
-
-#code.text-section{
-  background: url('../img/code-bkgrd2.png') center no-repeat;
-  background-color: #fff;
-}
-
-#code-p {
-  width: 400px;
-  top: 260px;
-  left: 80px;
-}
-
-.text-section .txt{
-  display: block;
-  position: absolute;
-}
-
-#html p, #css p, #js p{
-  color: $dk_blue;
-  font-weight: $ft_bold;
-  font-size: 3em;
-  text-shadow: 2px 2px 2px #B5B4B4;
-}
-
-#html {
-  position: absolute;
-  top: 55px;
-  left: 175px;
-}
-
-#css {
-  position: absolute;
-  top: 94px;
-  right: 373px;
-}
-
-#js {
-  position: absolute;
-  top: 255px;
-  right: 180px;
-}
-
-#design.text-section{
-  background: url('../img/design-bkgrd2.png') center no-repeat;
-  background-color: #fff;
-}
-
-#design-p{
-  width: 400px;
-  top: 300px;
-  right: 290px;
   z-index: 100;
+
+  iframe{
+    top: 0;
+  }
 }
 
-#temp1{
-  position: absolute;
-  top: 260px;
-  right: 0;
-  z-index: 300;
+#aside_iframe{
+  color: $dk_blue;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
 
-  width:200px;
-  height: 171px;
-  transition: all 1s ease;
+  img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto 0 auto;
+  }
+
+  h2{
+    font-weight: $ft_norm;
+    text-align: center;
+    color: #fff;
+    background-color: $dk_blue;
+    width: 100%;
+    padding: 10px 0;
+  }
 }
 
-#temp5{
-  position: absolute;
-  top: 160px;
-  left: -30px;
-  z-index: 300;
+#nav_tab{
+position: absolute;
+top:75px;
+right: 0;
+width: 30px;
+height: 30px;
 
-  width:200px;
-  height: 171px;
-  transition: all 1s ease;
-}
+transform: rotate(90deg);
 
-#temp6{
-  position: absolute;
-  top: 0;
-  left: 320px;
-  z-index: 200;
+background-color: $gray;
+color: $dk_blue;
+padding: 4px;
+font-family: 'Open Sans', sans-serif;
 
-  width:200px;
-  height: 171px;
-  transition: all 1s ease;
-}
+box-shadow: -1px 2px 1px rgba(0,0,0,0.5);
 
-#design.text-section img{
-  max-width: 100%;
-  transition: all 1s ease 1s;
-}
+border-bottom-left-radius: 20px; 
+z-index: 200;
 
-#temp5:hover{
-  -webkit-transform: translate(200%, 50%) scale(3);
-  -moz-transform: translate(200%, 50%) scale(3);
-  -ms-transform: translate(200%, 50%) scale(3);
-  -o-transform: translate(200%, 50%) scale(3);
-  transform: translate(200%, 50%) scale(3);
-}
-
-#temp6:hover{
-  -webkit-transform: translate(40%, 140%) scale(3);
-  -moz-transform: translate(40%, 140%) scale(3);
-  -ms-transform: translate(40%, 140%) scale(3);
-  -o-transform: translate(40%, 140%) scale(3);
-  transform: translate(40%, 140%) scale(3);
-}
-
-#temp1:hover{
-  -webkit-transform: translate(-200%, -10%) scale(3);
-  -moz-transform: translate(-200%, -10%) scale(3);
-  -ms-transform: translate(-200%, -10%) scale(3);
-  -o-transform: translate(-200%, -10%) scale(3);
-  transform: translate(-200%, -10%) scale(3);
-}
-
-#create.text-section{
-  background: url('../img/create-bkgrd2.png') center no-repeat;
-  background-color: #fff;
-}
-
-#create-p{
-  width: 450px;
-  top: 290px;
-  left: 280px;
-}
-
-.txt {
-  line-height: 2em;
-  text-align: left;
 }

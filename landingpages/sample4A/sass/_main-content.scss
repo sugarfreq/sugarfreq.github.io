@@ -1,0 +1,186 @@
+/*
+---------------------
+    Main Content
+---------------------
+*/
+
+#get_started {
+	padding: 50px 0;
+	margin: 50px 0;
+	text-align: center;
+
+	h1, h2{
+		color: $main-color;
+		font-weight: 300;
+	}
+
+	h1{
+		font-size: 40px;
+		margin-bottom: 30px;
+	}
+
+	h2{
+		font-size: 30px;
+	}
+
+	h2 + span, h2 + div {
+		color: $sec-color;
+		margin: 11px 0;
+		display: block;
+		width: 100%;
+		height: 120px;
+		position: relative;
+	}
+
+}
+
+.icon-computer{
+	font-size: 120px;
+}
+
+.icon-cust-service{
+	font-size: 100px;
+}
+
+.icon-seo{
+	position: absolute;
+	top: 0;
+	left: 38%;
+	font-size: 74px;
+}
+
+.icon-social{
+	position: absolute;
+	top: 30px;
+	left: 18%;
+	font-size: 74px;
+}
+
+.icon-local-dir{
+	position: absolute;
+	top: 37px;
+	left: 57%;
+	font-size: 60px;
+}
+
+#get_started .container > div{
+		display: table-cell;
+		padding: 30px;
+		width: 333px;
+}
+
+#services {
+	background-color: $dk_gray;
+	color: #fff;
+	overflow: hidden;
+	height: 360px;
+
+	h1{
+		color: #fff;
+		text-align: center;
+		font-weight: 300;
+	}
+}
+
+.service {
+	display: inline-block;
+	margin: 0 10px;
+	width: 22%;
+	max-width: 226px;
+	position: relative;
+	height: 360px;
+	vertical-align: top;
+	
+
+	h1{
+		padding: 20px;
+		background-color: $main-color;
+		height:88px;
+
+		box-shadow: -5px 1px 7px -4px rgba(0, 0, 0, 0.45), 5px 1px 7px -4px rgba(0, 0, 0, 0.45);
+
+		span{
+			font-size: 14px;
+			display: block;
+		}
+	}
+
+	ul {
+		padding-left: 30px;
+		list-style-type: none;
+		margin: 1em 0;
+		height: 250px;
+		font-size: 15px;
+	}
+
+	li {
+		padding-bottom: 10px;
+		line-height: 18px;
+	}
+
+	h1+div{
+		background-color: $main-color;
+		text-align: center;
+		position: absolute;
+		width: 100%;
+		max-width: 226px;
+		height: 275px;
+		bottom: 0;
+		-webkit-cursor: pointer;
+		-moz-cursor: pointer;
+		-ms-cursor: pointer;
+		-o-cursor: pointer;
+		cursor: pointer;
+
+		box-shadow: -5px 1px 7px -4px rgba(0, 0, 0, 0.45), 5px 1px 7px -4px rgba(0, 0, 0, 0.45);
+	
+		z-index: 200;
+	}
+
+	img {
+		position: absolute;
+		top: 10px;
+		left: 39%;
+	}
+
+	img+span{ 
+		padding-top: 20%;
+		position: relative;
+		top: auto;
+		left: auto;
+		font-size: 170px;
+		color: #ffffff;
+		display: block;
+	}
+
+	ul+img{ 
+		position: absolute;
+		top: auto;
+		bottom: -1px;
+		z-index: 100;
+	}
+}
+
+#basic div+div{
+	background: url('../img/basic-b.png') no-repeat center;
+}
+
+#gold div+div{
+	background: url('../img/gold-b.png') no-repeat center;
+}
+
+#goldp div+div{
+	background: url('../img/gold+b.png') no-repeat center;
+}
+
+#gold-social div+div{
+	background: url('../img/gold+social-b.png') no-repeat center;
+}
+
+#gold li:first-child, #goldp li:first-child, #gold-social li:first-child{
+	font-size: 12px;
+}
+
+
+
+

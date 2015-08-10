@@ -1,0 +1,491 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+   width: 100%;
+
+}
+* {
+  box-sizing: border-box;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clear{
+	clear:both;
+}
+
+/*
+---------------------
+fonts
+---------------------
+*/
+
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('../fonts/MuseoSans_500-webfont.eot');
+    src: url('../fonts/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/MuseoSans_500-webfont.woff') format('woff'),
+         url('../fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+         url('../fonts/MuseoSans_500-webfont.svg#MuseoSans500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DroidSerif-Regular';
+    src: url('../fonts/DroidSerif-Regular-webfont.eot');
+    src: url('../fonts/DroidSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DroidSerif-Regular-webfont.woff') format('woff'),
+         url('../fonts/DroidSerif-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/DroidSerif-Regular-webfont.svg#DroidSerif-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DroidSerif-Bold';
+    src: url('../fonts/DroidSerif-Bold-webfont.eot');
+    src: url('../fonts/DroidSerif-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DroidSerif-Bold-webfont.woff') format('woff'),
+         url('../fonts/DroidSerif-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/DroidSerif-Bold-webfont.svg#DroidSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+---------------------
+header
+---------------------
+*/
+
+.upgrade {
+	background: #ffffff url('../images/bg.png') repeat-x;
+}
+
+
+body{
+	font-family: 'MuseoSans';
+}
+
+.container{
+	max-width:960px;
+	width: 96%;
+	margin: 0 auto;
+	position: relative;
+}
+
+header{
+	height:70px;
+	padding:13px 0;
+	position: relative;
+	background-color: #E5F1F9;
+	width: 100%;
+
+	font-size: 34px;
+	color: #cacaca;
+}
+
+#logo{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#header_right{
+	display: inline-block;
+	color:#0075bf;
+	font-size:18px;
+	font-weight:900;
+	position: absolute;
+	right: 0;
+	top: 15px;
+}
+
+/*
+---------------------
+body
+---------------------
+*/
+
+main{
+	line-height:18px;
+	font-size:12px;
+	color:#898989;
+}
+
+main h1{
+	margin:30px 0;
+	padding: 20px 0;
+	font-size:46px;
+	color:#032c5b;
+	font-family: 'DroidSerif-Regular';
+	line-height: 46px;
+}
+
+main h2{
+	color:#004479;
+	font-size:16px;
+	padding: 20px 0;
+}
+main h5{
+	text-transform: uppercase;
+	color: #0075bf;
+	padding-top: 10px;
+}
+
+main p{
+	font-size: 14px;
+	line-height: 22px;
+	padding-bottom: 20px;
+}
+
+main p.blue{
+	color:#0075bf;
+}
+
+main .bold{
+	font-weight: bold;
+}
+
+main .italics{
+	font-style: italic;
+}
+
+#main_left{
+	width:55%;
+	display: table-cell;
+	margin-top: 15px;
+	height: auto;
+}
+
+#main_left h2{
+	font-size: 20px;
+	line-height: 30px;
+	color: #0075bf;
+}
+
+#main_left a{
+	font-size: 12px;
+	color: #0075bf;
+	text-decoration: none;
+}
+
+#main_left a.button{
+	width: 200px;
+	padding: 10px 0;
+	text-align: center;
+	color: #fff;
+    background-color: #0077C0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    margin: 30px auto;
+    display: block;
+    border-radius: 15px;
+
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+}
+
+#main_left a.button:hover{
+	background-color: #FDBF57;
+	color: #0077C0;
+}
+
+
+#main_right{
+	display: table-cell;
+	margin-left:20px;
+	width:40%;
+	vertical-align: top;
+}
+
+#main_right img {
+	max-width: 100%;
+}
+
+.red{
+	color: #cb0000;
+}
+
+
+
+
+/*
+-------------------
+Footer
+-------------------
+*/
+
+footer {
+	height: 60px;
+	margin-top:50px;
+	padding-top: 20px;
+	background-color: #032C5B;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+
+#footerContent {
+	max-width: 1020px;
+	width: 96%;
+	margin: auto;
+}
+
+#footer-links {
+	clear: both;
+	font-size: 11px;
+	color: #ffffff;
+	font-family: 'MuseoSans';
+	float: right; 
+}
+
+#footer-links p {
+	padding: 0;
+}
+
+#footer-links img {
+	padding-left: 20px;
+}
+
+.serif {
+	font-family: 'DroidSerif-Regular';
+}
+
+.blue {
+	color: #032c5b;
+}
+.right{
+	float: right;
+	width: 48%;
+	padding-right: 10px;
+}
+.left{
+	float: left;
+	width: 48%;
+	padding-right: 10px;
+}
+.clear{
+	clear: both;
+}
+
+#footer.top-pad{
+	padding-top: 60px;
+}
+/*
+--------------
+Overlay
+--------------
+*/
+
+#overlay {
+	margin: 20px;
+}
+
+#overlay div {
+     width:350px;
+     margin: 100px auto;
+     background-color: #EEF4F7;
+     border:1px solid #000;
+     padding:35px;
+     text-align:right;
+     border-radius: 10px;
+}
+
+#overlay input[type="text"] {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #7b7b7b;
+    border-radius: 7px 7px 7px 7px;
+    font-size: 12px;
+    height: 25px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    width: 210px;
+}
+
+#overlay select {
+	margin-bottom: 15px;
+	margin-left: 15px;
+}
+
+#overlay .submit {
+    border: medium none;
+    background-color: #0077C0;
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    width: 150px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 15px;
+
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+
+}
+
+#overlay a.submit{
+	padding-top: 7px;
+}
+
+#overlay .submit:hover{
+	background-color: #FDBF57;
+	color: #0077C0;
+}
+
+input.phone{
+	color:#000;
+	font-size:18px;
+	font-weight:100;
+}
+
+#overlay p{
+	margin:20px 0;
+	font-size:12px;
+	line-height:18px;
+	color:#5e5e5e;
+}
+
+#overlay label{
+	font-size:12px;
+	line-height:18px;
+	color:#5e5e5e;
+	display: inline-block;
+	width: 200px;
+	text-align: right;
+}
+
+#overlay a{
+	color:#014773;
+}
+
+
+
+/*
+--------------
+media queries
+--------------
+*/
+
+@media screen and (min-width: 50px) and (max-width: 890px) {
+	main h1{
+		text-align: center;
+	}
+
+	main p{
+		text-align: center;
+		margin: 20px 0;
+	}
+
+	#main_right {
+		display: table-header-group;
+
+	}
+	#main_right img{
+		display: block;
+		margin: 0 auto;
+	}
+	#overlay{
+		margin: 0 auto;
+		display: block;
+		width: 60%;
+		max-width: 300px;
+	}
+
+	#overlay label{
+		text-align: center;
+		width: 100%;
+	}
+
+	#overlay input[type="text"]{
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#overlay select{
+		width: 100%;
+		margin-left: 0;
+	}
+
+	footer {
+		position: relative;
+	}
+}
+
+@media screen and (min-width: 50px) and (max-width: 580px){
+	header{
+		height: auto;
+	}
+
+	#logo{
+		display: block;
+		margin: 0 auto;
+		width: 270px;
+	}
+	#header_right{
+		display: block;
+		margin: 0 auto;
+		position: relative;
+		width: 260px;
+		padding-bottom: 20px;
+	}
+}
+
+@media screen and (max-height: 700px) {
+	footer {
+		position: relative;
+	}
+}
+

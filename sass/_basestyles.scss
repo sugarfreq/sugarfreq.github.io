@@ -9,7 +9,7 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: #000;
 }
 
 html {
@@ -19,6 +19,11 @@ html {
 
 html, body{
   height:100%;
+  position:relative;
+}
+
+*{
+  box-sizing: border-box;
 }
 
 /*
