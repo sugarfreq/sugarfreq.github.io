@@ -4,12 +4,16 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 button,
 input,
 select,
 textarea {
-    color: #000;
+    color: #222;
 }
 
 html {
@@ -19,11 +23,6 @@ html {
 
 html, body{
   height:100%;
-  position:relative;
-}
-
-*{
-  box-sizing: border-box;
 }
 
 /*

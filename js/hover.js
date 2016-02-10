@@ -1,6 +1,6 @@
 //hover.js
 
-$(document).ready(function(){
+/*$(document).ready(function(){
   function menuSlide(navID){
     var navElement = document.getElementById(navID);
     var movement = parseInt(navElement.style.top)
@@ -18,7 +18,7 @@ $(document).ready(function(){
 
      setTimeout(menuSlide(menuID), 300);
    });
-});
+});*/
 
 
 
@@ -39,3 +39,18 @@ $(document).ready(function(){
 
     });
 })*/
+
+$(document).ready(function(){
+    $('.nav-hover').mouseover(function(){
+        $(this).next('.nav-show').slideToggle(400);
+        $(this).addClass('engage');
+    });
+
+    $('.nav-hover').mouseout(function(){
+        $(this).next('.nav-show').slideToggle(400);
+        $(this).removeClass('engage');
+    });
+
+
+
+})

@@ -1,3 +1,7 @@
+/* ==========================================================================
+   _header.scss
+   ========================================================================== */
+
 // _header.scss
 
 header {
@@ -5,134 +9,80 @@ header {
   top: 0;
   z-index: 99999;
 
-  background-color: #b5b4b4;
-  color: #fff;
+  background-color: #ffffff;
   text-align: left;
   height: 75px;
   width: 100%;
 
-  a:first-child {
-    color: #ffffff;
+  a{
     text-decoration: none;
-    display: inline-block;
+  }
+
+  img{
+    width: 15px;
+    height: auto;
   }
 
   h1{
     padding-top: 17px;
     font-size: 2.8em;
+    font-weight: 300;
+    display: inline-block;
+    vertical-align: middle;
+    width:49%;
   }
 
-  nav {
+  #social{
     display: inline-block;
-    position: absolute;
-    right: 0;
-  }
+    width: 49%;
+    text-align: right;
+    div{
+      display: inline-block;
+    }
+    a{
+      color:#fff;
+      display: inline-block;
+      vertical-align: middle;
+      width:35px;
+      height:35px;
+      background-color:#9d9d9d;
+      text-align: center;
+      padding:10px 0;
+    }
 
-  nav div {
-    display: inline-block;
-    vertical-align: top;
+    a:hover{
+      background-color: $dk_blue;
+    }
   }
 }
 
-  a.nav{
-    width: 35px;
-    height: 35px;
-
-    text-align: center;
-    padding:7px;
-
-    background-color: $dk_blue;
-    position: relative;
-
-    z-index: 200;
+nav{  
+  position: fixed;
+  top: 75px;
+  z-index: 99999;
+  width:100%;
+  background-color:$dk_blue;
+  text-align:left;
+  a{
+    color:#fff;
+    text-decoration:none;
+    display: inline-block;
+    padding: 10px 30px;
+    -webkit-transition: all ease-out 300ms;
+    -moz-transition: all ease-out 300ms;
+    -o-transition: all ease-out 300ms;
+    transition: all ease-out 300ms;
   }
-
-  a.hover{
-    display: none;
-    color: #fff;
-    background-color: $dk_blue;
-    -webkit-transform: rotate(-90deg) translateX(0);
-    -moz-transform: rotate(-90deg) translateX(0);
-    -ms-transform: rotate(-90deg) translateX(0);
-    -o-transform: rotate(-90deg) translateX(0);
-    transform: rotate(-90deg) translateX(0);
-
-    text-decoration: none;
-    text-align: left;
-
-    width: 85px;
-    height: 35px;
-    padding: 10px;
-    margin: 25px -25px 0 -25px;
-
-    position: relative;
-
-    z-index: 100;
+  a:hover{
+    background-color:#ffffff;
+    color:$dk_blue;
   }
-
-  a.nav:hover + a.hover{
-    display: block;
-
-    -webkit-animation: slide-down 400ms ease;
-    -moz-animation: slide-down 400ms ease;
-    -ms-animation: slide-down 400ms ease;
-    -o-animation: slide-down 400ms ease;
-    animation: slide-down 400ms ease;
-
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    
+  .top_nav{
+    display: inline-block;
   }
-
-  @-webkit-keyframes slide-down{
-    0%{
-        margin-top: -29px;
-    }
-
-    100%{
-        margin-top: 25px;
-    }
+  .sub_nav{
+    display:none;
   }
+}
 
-  @-moz-keyframes slide-down{
-    0%{
-        margin-top: -29px;
-    }
-
-    100%{
-        margin-top: 25px;
-    }
-  }
-
-  @-ms-keyframes slide-down{
-    0%{
-        margin-top: -29px;
-    }
-
-    100%{
-        margin-top: 25px;
-    }
-  }
-
-  @-o-keyframes slide-down{
-    0%{
-        margin-top: -29px;
-    }
-
-    100%{
-        margin-top: 25px;
-    }
-  }
-
-  @keyframes slide-down{
-    0%{
-        margin-top: -29px;
-    }
-
-    100%{
-        margin-top: 25px;
-    }
-  }
+ 

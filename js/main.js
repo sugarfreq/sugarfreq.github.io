@@ -1,55 +1,93 @@
 $(document).ready(function(){
-
-	$('#nav_tab').click(function(){
-		$('aside').slideToggle();
-
-	});
-
-	$('aside h2').click(function(){
-        if( $(this).next('div').is(':hidden')) {
-            $('aside div').slideUp('fast');
-        };
-        $(this).next('div').slideToggle('slow');
+    $('.nav-hover').mouseover(function(){
+        $(this).next('.nav-show').slideToggle(400);
+        $(this).addClass('engage');
     });
 
-    $('aside h3').click(function(){
-        if( $(this).next('div').is(':hidden')) {
-            $('aside div').slideUp('fast');
-        };
-        $(this).next('div').slideToggle('slow');
+    $('.nav-hover').mouseout(function(){
+        $(this).next('.nav-show').slideToggle(400);
+        $(this).removeClass('engage');
     });
-
-	var iFrameSRC = document.getElementById('feature').src;
-
-
-		
-
-
-		$('aside div>img').click(function(){
-			//get image source when clicked
-			var sampleSRC = $(this).attr('src');
-
-			//seperate out file name
-			var sampleFileStart = sampleSRC.indexOf('img/');
-				sampleFileEnd = sampleSRC.indexOf('.png');
-				sampleFile = sampleSRC.substring(sampleFileStart+4, sampleFileEnd);
-				FileType = sampleSRC.split('/');
-
-				if (FileType[1] == 'landingpages') {
-
-					iFrameSRC = sampleFile+'/index.html';
-
-				} else {
-					iFrameSRC = sampleFile+'.html';
-				}
-
-				console.log('FileType :', sampleSRC);
-
-			document.getElementById('feature').src = iFrameSRC;
-		});
-
-		
-    
-
-
 });
+
+// keep label above form inputs after information has been entered
+function moveLabel(formInput){
+    var dataEmpty = document.getElementById(formInput);
+        inputID = "#"+formInput;        
+        placeHolder = $(inputID).attr('placeholder');
+
+        console.log('placeHolder', placeHolder);
+
+    if ((dataEmpty.value.length > 0) || (placeHolder.length > 0)){
+        $(inputID).addClass('entered');
+        
+     } else {
+    	$(inputID).removeClass('entered');
+    }
+
+}
+
+$("#name").change(function(){
+    moveLabel("name");
+});
+$("#email").change(function(){
+    moveLabel("email");
+});
+$("#message").change(function(){
+    moveLabel("message");
+});
+
+$('#contact-form').on('submit', function(){
+
+    moveLabel("name");
+    moveLabel("email");
+    moveLabel("message");
+});
+
+//Carousel JS
+
+    //The maximages global variable must equal the number of thumbnails in the gallery.
+    var maximages = 6;
+    //Folder name and start of file name of each image file.
+    var startpath = "img/port"
+    //Filename extension of each image.
+    var extension = ".png"
+    //links to go with images
+    var imgLinkArray = ["http://go.officite.com/HI/dental.html", "http://go.officite.com/NewYear/new-year.html", "http://go.officite.com/New-Years/new-year.html", "http://www.onlinepodiatrysites.com/nov_2015", "http://www.onlinechiro.com/dec_2015", "http://www.theonlinepractice.com/jan_2016" ];
+
+    function showbig(pic){
+      document.getElementById("bigpic").src = pic;
+
+      var fileExtension = pic.indexOf(extension);
+      var imgNumber = pic.substr(fileExtension - 2, 2);
+
+      var newImgLink = imgLinkArray[imgNumber-1];
+      document.getElementById("imglink").href = newImgLink;
+
+    }
+
+    function calcslide(x){
+      var currentImage = document.getElementById("bigpic").src;
+      var fileExtension = currentImage.indexOf(extension);
+      var imgNumber = currentImage.substr(fileExtension - 2, 2);
+      var newNumber = parseInt(imgNumber) + x;
+      var imgLink = document.getElementById("imglink");
+
+      if (newNumber < 1){
+        newNumber = maximages;
+      }
+
+      if (newNumber > maximages){
+        newNumber=1;
+      }
+
+      var newImageNumber = ("0" + newNumber).slice(-2);
+
+      var newImage = startpath + newImageNumber + extension;
+
+      var newImgLink = imgLinkArray[newNumber-1];
+
+      imgLink.href = newImgLink;
+
+      showbig(newImage);
+    }
