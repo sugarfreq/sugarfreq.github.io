@@ -38,7 +38,7 @@ body {
 
 #wrapper {
   width: 100%;
-  overflow: hidden; 
+  overflow: hidden;
   position: relative;
   }
 
@@ -112,8 +112,8 @@ h1, h2, h3, h4, h5, p {
 */
 @font-face {
   font-family: 'officite';
-  src: url("http://go.officite.com/global-resources/fonts/officite.eot?j8fuh");
-  src: url("http://go.officite.com/global-resources/fonts/officite.eot?#iefixj8fuh") format("embedded-opentype"), url("http://go.officite.com/global-resources/fonts/officite.ttf?j8fuh") format("truetype"), url("http://go.officite.com/global-resources/fonts/officite.woff?j8fuh") format("woff"), url("http://go.officite.com/global-resources/fonts/officite.svg?j8fuh#icomoon") format("svg");
+  src: url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.eot?j8fuh");
+  src: url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.eot?#iefixj8fuh") format("embedded-opentype"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.ttf?j8fuh") format("truetype"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.woff?j8fuh") format("woff"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.svg?j8fuh#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -232,7 +232,7 @@ header img {
 */
 #form {
   margin: 30px auto;
-  vertical-align: top; 
+  vertical-align: top;
 
 }
 
@@ -293,7 +293,7 @@ header img {
   #form_header p.sub{
     font-size: 12px;
     color: #ffffff;
-    font-weight: 300; 
+    font-weight: 300;
     line-height: 12px;
     padding-top: 140px;}
 
@@ -323,7 +323,7 @@ header img {
     display: block;
     color: #ffffff;
     text-align: center;
-    font-size: 14px; 
+    font-size: 14px;
     margin: -10px 0;}
   #lead_capture input[type="text"] {
     width: 100%;
@@ -408,12 +408,12 @@ main{
 }
 
 #hero1{
-  background: url('../img/bg.jpg') repeat-x top center ; 
+  background: url('../img/bg.jpg') repeat-x top center ;
   position: relative;
 }
 
 #hero2{
-  background: url('../img/bg.jpg') repeat-x top center fixed ; 
+  background: url('../img/bg.jpg') repeat-x top center fixed ;
   position: relative;
 }
 
@@ -570,7 +570,7 @@ main{
 
 #CTA a:hover{
   background-color: #0077bf;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 #CTA2 {
@@ -612,9 +612,9 @@ main{
 */
 footer {
   display: block;
-  background: 
+  background:
     linear-gradient(
-      rgba(5, 119, 192, 0.9), 
+      rgba(5, 119, 192, 0.9),
       rgba(5, 119, 192, 0.9)
     ),
     url('../img/footer-bg.jpg') no-repeat 0 300px fixed;
@@ -688,7 +688,7 @@ footer a:hover{
   text-decoration: underline;
 }
 
-#company .menu-company-menu-container{ 
+#company .menu-company-menu-container{
   margin: 0 auto;
   width: 80%;
   padding-bottom: 10px;

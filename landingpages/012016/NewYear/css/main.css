@@ -106,8 +106,8 @@ h1, h2, h3, h4, h5, p {
 */
 @font-face {
   font-family: 'officite';
-  src: url("http://go.officite.com/global-resources/fonts/officite.eot?j8fuh");
-  src: url("http://go.officite.com/global-resources/fonts/officite.eot?#iefixj8fuh") format("embedded-opentype"), url("http://go.officite.com/global-resources/fonts/officite.ttf?j8fuh") format("truetype"), url("http://go.officite.com/global-resources/fonts/officite.woff?j8fuh") format("woff"), url("http://go.officite.com/global-resources/fonts/officite.svg?j8fuh#icomoon") format("svg");
+  src: url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.eot?j8fuh");
+  src: url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.eot?#iefixj8fuh") format("embedded-opentype"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.ttf?j8fuh") format("truetype"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.woff?j8fuh") format("woff"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.svg?j8fuh#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -386,22 +386,22 @@ header div > div {
   		border-top: 1px solid #0077bf;
   		padding: 10px 0;
   	}
-  
+
   	p:hover{
   		border-bottom: 1px solid #ffffff;
   		border-top: 1px solid #ffffff;
   		cursor: pointer;
   	}
-  
+
   	.columns{
-  
+
   	}
-  
+
   	.col-3.active p{
   		border-bottom: 1px solid #ffffff;
   		border-top: 1px solid #ffffff;
   	}
-  
+
   	.col-3.active:before{
   		content:"";
   		width:0;
@@ -514,7 +514,7 @@ header div > div {
   text-align: center;
   font-size: 2em;
   padding-bottom: 20px;
-  display: none; 
+  display: none;
   color: #0062aa;}
 
 .tabs.no-js h1 {
@@ -532,7 +532,7 @@ header div > div {
 
 span.first {
   text-transform: uppercase;
-  font-weight: 400; 
+  font-weight: 400;
   color: #0062aa; }
 
 #CTA {
@@ -877,7 +877,7 @@ footer a:hover {
       display: block;
       text-align: center; }
     #lead_capture input[type="text"], #lead_capture input[type="submit"], #lead_capture label, #lead_capture select {
-      width: 100%; } 
+      width: 100%; }
     .tabs h1{
       font-size: 1.3em;
     }
