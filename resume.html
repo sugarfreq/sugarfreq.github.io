@@ -23,63 +23,66 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-            <div id="header">
+            <header>
               <div class="container">
                 <a href="index.html"><h1>Carin Slater</h1></a>
-                <ul>
-                  <li>
-                    <a href="https://www.linkedin.com/in/carinslater" target="_blank">li</a>
-                    <ul>
-                      <li>
-                        <p>linked-in</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="https://github.com/sugarfreq" target="_blank">gh</a>
-                    <ul>
-                      <li>
-                        <p>github</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="index.html#contact">c</a>
-                    <ul>
-                      <li>
-                        <p>contact</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="resume.html">cv</a>
-                    <ul>
-                      <li>
-                        <p>resume</p>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <div id="social">
+                  <div>
+                    <a href="https://www.linkedin.com/in/carinslater" target="_blank"><img src="img/linkedin-icon.png" alt="Carin Slater on Linked-in"></a>
+                  </div>
+                  <div>
+                    <a href="https://github.com/sugarfreq" target="_blank"><img src="img/github.png" alt="Carin Slater on github"></a>
+                  </div>
+                </div>
               </div>
-            </div><!--end of header-->
+            </header>
+            <nav>
+              <div class="container">
+                <div class="top_nav">
+                  <a href="./portfolio.html">portfolio</a>
+                  <div class="sub_nav">
+                    <a href="">landing pages</a>
+                  </div>
+                  <div class="sub_nav">
+                    <a href="">fluid html emails</a>
+                  </div>
+                </div>
+                <div class="top_nav">
+                  <a href="http://carinslater.com/index.html#contact">contact</a>
+                </div>
+                <div class="top_nav">
+                  <a href="resume.html">resume</a>
+                </div>
+              </div>
+            </nav>
 
-            <div id="resume" class="image-section">
+            <div id="resume" class="image-section background-img">
               <div class="container">
                 <div id="content">
                   <div id="experience" class="resume">
                     <h2>Experience</h2>
                     <div class="int-res">
                       <h3>Internet Brands</h3>
-                      <p>Web Template Designer</p>
-                      <p>February 2014 - Present</p>
+                      <p class="job">Web Designer/Developer</p>
+                      <p class="dates">June 2015 - Present</p>
+                      <ul>
+                          <li>Create and code responsive landing pages using HTML, CSS, and JavaScript</li>
+                          <li>Create and code fluid emails that work across all major email clients</li>
+                          <li>Built modular fluid email templates to facilitate email development</li>
+                          <li>Work with the marketing team to create ad campaigns across 3 brands and 13 markets.</li>
+                      </ul>
+
+                      <h3>Baystone Media</h3>
+                      <p class="job">Web Template Designer</p>
+                      <p class="dates">February 2014 - June 2015</p>
                       <ul>
                           <li>Create and code templated web designs</li>
                           <li>Create and code HTML emails and landing pages</li>
-                          <li>Create custom flash animations, buttons, promotions</li>
+                          <li>Create custom buttons and promotions</li>
                       </ul>
                       
                       <h3>CodeGreen Development</h3>
-                      <p class="job">UX Designer</p>
+                      <p class="job">UI Designer</p>
                       <p class="dates">May 2013 - March 2014</p>
                       <ul>
                           <li>Design webpages across multiple screen sizes</li>
@@ -89,7 +92,7 @@
 
                       <h3>Husky Hog BBQ</h3>
                       <p class="job">Web Designer / Developer</p>
-                      <p class="dates">December 2012 - Present</p>
+                      <p class="dates">December 2012 - September 2014</p>
                       <ul>
                           <li>Redesigned website and set up for Wordpress platform</li>
                           <li>Designed and coded responsive web design</li>
@@ -143,23 +146,6 @@
                   </div>
                 </div>
               </div>
-            </div><!--end of image section-->
-
-            <div id="social-footer">
-                  <ul>
-                  <li>
-                    <a href="https://www.linkedin.com/in/carinslater" target="_blank">linked-in</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/sugarfreq" target="_blank">github</a>
-                  </li>
-                  <li>
-                    <a href="#contact">contact</a>
-                  </li>
-                  <li>
-                    <a href="resume.html">resume</a>
-                  </li>
-                </ul>
             </div>
 
 
@@ -168,15 +154,5 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
     </body>
 </html>
