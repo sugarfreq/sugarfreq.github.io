@@ -13,14 +13,14 @@ $(document).ready(function(){
 // keep label above form inputs after information has been entered
 function moveLabel(formInput){
     var dataEmpty = document.getElementById(formInput);
-        inputID = "#"+formInput;        
+        inputID = "#"+formInput;
         placeHolder = $(inputID).attr('placeholder');
 
         console.log('placeHolder', placeHolder);
 
     if ((dataEmpty.value.length > 0) || (placeHolder.length > 0)){
         $(inputID).addClass('entered');
-        
+
      } else {
     	$(inputID).removeClass('entered');
     }
@@ -53,7 +53,7 @@ $('#contact-form').on('submit', function(){
     //Filename extension of each image.
     var extension = ".png"
     //links to go with images
-    var imgLinkArray = ["http://go.officite.com/HI/dental.html", "http://go.officite.com/NewYear/new-year.html", "http://go.officite.com/New-Years/new-year.html", "http://www.onlinepodiatrysites.com/nov_2015", "http://www.onlinechiro.com/dec_2015", "http://www.theonlinepractice.com/jan_2016" ];
+    var imgLinkArray = ["StateSpecificCampaigns/HI/dental.html", "012016/NewYear/new-years.html", "012016/New-Years/new-year.html", "112015/OC/index.html", "122015/OPS/index.html", "012016/TOP/index.html" ];
 
     function showbig(pic){
       document.getElementById("bigpic").src = pic;
@@ -61,7 +61,7 @@ $('#contact-form').on('submit', function(){
       var fileExtension = pic.indexOf(extension);
       var imgNumber = pic.substr(fileExtension - 2, 2);
 
-      var newImgLink = imgLinkArray[imgNumber-1];
+      var newImgLink = "landingpages/"+imgLinkArray[imgNumber-1];
       document.getElementById("imglink").href = newImgLink;
 
     }
