@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, p {
 @font-face {
   font-family: 'officite';
   src: url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.eot?j8fuh");
-  src: url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.eot?#iefixj8fuh") format("embedded-opentype"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.ttf?j8fuh") format("truetype"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.woff?j8fuh") format("woff"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font//fonts/officite.svg?j8fuh#icomoon") format("svg");
+  src: url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.eot?#iefixj8fuh") format("embedded-opentype"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.ttf?j8fuh") format("truetype"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.woff?j8fuh") format("woff"), url("http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.svg?j8fuh#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
