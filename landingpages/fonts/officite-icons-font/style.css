@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'officite';
-    src:    url('http://go.officite.com/global-resources/fonts/officite.eot?fxx6ct');
-    src:    url('http://go.officite.com/global-resources/fonts/officite.eot?fxx6ct#iefix') format('embedded-opentype'),
-        url('http://go.officite.com/global-resources/fonts/officite.ttf?fxx6ct') format('truetype'),
-        url('http://go.officite.com/global-resources/fonts/officite.woff?fxx6ct') format('woff'),
-        url('http://go.officite.com/global-resources/fonts/officite.svg?fxx6ct#icomoon') format('svg');
+    src:    url('http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.eot?fxx6ct');
+    src:    url('http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.eot?fxx6ct#iefix') format('embedded-opentype'),
+        url('http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.ttf?fxx6ct') format('truetype'),
+        url('http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.woff?fxx6ct') format('woff'),
+        url('http://sugarfreq.github.io/landingpages/fonts/officite-icons-font/fonts/officite.svg?fxx6ct#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
