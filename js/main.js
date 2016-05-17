@@ -53,7 +53,7 @@ $('#contact-form').on('submit', function(){
     //Filename extension of each image.
     var extension = ".png"
     //links to go with images
-    var imgLinkArray = ["StateSpecificCampaigns/HI/dental.html", "012016/NewYear/new-years.html", "012016/New-Years/new-year.html", "112015/OC/index.html", "122015/OPS/index.html", "012016/TOP/index.html" ];
+    var imgLinkArray = ["StateSpecificCampaigns/HI/dental.html", "012016/NewYear/new-year.html", "012016/New-Years/new-year.html", "112015/OC/index.html", "122015/OPS/index.html", "012016/TOP/index.html" ];
 
     function showbig(pic){
       document.getElementById("bigpic").src = pic;
