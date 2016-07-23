@@ -22,7 +22,7 @@ function moveLabel(formInput){
         $(inputID).addClass('entered');
 
      } else {
-    	$(inputID).removeClass('entered');
+      $(inputID).removeClass('entered');
     }
 
 }
@@ -46,14 +46,9 @@ $('#contact-form').on('submit', function(){
 
 //Carousel JS
 
-    //The maximages global variable must equal the number of thumbnails in the gallery.
-    var maximages = 6;
-    //Folder name and start of file name of each image file.
-    var startpath = "img/port"
-    //Filename extension of each image.
-    var extension = ".png"
-    //links to go with images
-    var imgLinkArray = ["StateSpecificCampaigns/HI/dental.html", "012016/NewYear/new-year.html", "012016/New-Years/new-year.html", "112015/OC/index.html", "122015/OPS/index.html", "012016/TOP/index.html" ];
+    //Folder name
+    var startpath = "img/";
+    var extension = ".png";
 
     function showbig(pic){
       document.getElementById("bigpic").src = pic;
@@ -61,7 +56,7 @@ $('#contact-form').on('submit', function(){
       var fileExtension = pic.indexOf(extension);
       var imgNumber = pic.substr(fileExtension - 2, 2);
 
-      var newImgLink = "landingpages/"+imgLinkArray[imgNumber-1];
+      var newImgLink = "http://sugarfreq.github.io/" + linkRoot + imgLinkArray[imgNumber-1];
       document.getElementById("imglink").href = newImgLink;
 
     }
@@ -83,11 +78,18 @@ $('#contact-form').on('submit', function(){
 
       var newImageNumber = ("0" + newNumber).slice(-2);
 
-      var newImage = startpath + newImageNumber + extension;
+      var newImage = startpath + fileName + newImageNumber + extension;
 
       var newImgLink = imgLinkArray[newNumber-1];
 
       imgLink.href = newImgLink;
 
       showbig(newImage);
+    }
+
+    function loadCarousel(options){
+      maximages = options.maximages;
+      fileName = options.fileName;
+      imgLinkArray = options.imgLinkArray;
+      linkRoot = options.linkRoot;
     }
