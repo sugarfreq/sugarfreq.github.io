@@ -386,24 +386,46 @@ nav {
   top: 75px;
   z-index: 99999;
   width: 100%;
+  height: 38px;
   background-color: #1185d7;
   text-align: left; }
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px 30px;
-    -webkit-transition: all ease-out 300ms;
-    -moz-transition: all ease-out 300ms;
-    -o-transition: all ease-out 300ms;
-    transition: all ease-out 300ms; }
-  nav a:hover {
-    background-color: #ffffff;
+  nav ul {
+    padding: 0;
+    margin: 0; }
+    nav ul li {
+      display: inline-block;
+      padding: 10px 30px;
+      list-style: none;
+      float: left;
+      -webkit-transition: all ease-out 300ms;
+      -moz-transition: all ease-out 300ms;
+      -o-transition: all ease-out 300ms;
+      transition: all ease-out 300ms; }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none; }
+  nav ul li:hover {
+    background-color: #ffffff; }
+    nav ul li:hover a {
+      color: #1185d7; }
+  nav li ul.sub_nav {
+    margin: 0px;
+    padding: 0px;
+    display: none;
+    position: absolute;
+    left: 0px;
+    z-index: 99;
+    top: 38px;
+    background-color: #1185d7; }
+    nav li ul.sub_nav a {
+      color: #fff; }
+    nav li ul.sub_nav li {
+      width: 150px; }
+  nav li:hover ul {
+    display: block;
+    width: 150px; }
+  nav li li:hover a {
     color: #1185d7; }
-  nav .top_nav {
-    display: inline-block; }
-  nav .sub_nav {
-    display: none; }
 
 /* ==========================================================================
    _image_section.scss
@@ -661,6 +683,15 @@ h1.txt_rt {
   padding: 0;
   width: 80%;
   max-width: 800px; }
+
+  #port-carousel .carousel.email #bigpic {
+    padding: 0;
+    width: 60%;
+    max-width: 800px; }
+
+  .carousel.email{
+    padding-top: 30px;
+  }
 
 /* ==========================================================================
    _footer.scss
