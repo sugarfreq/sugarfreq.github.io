@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/main.js"></script>
+        <script>
+        $(document).ready(function(){
+              loadCarousel({
+                maximages: 6,
+                fileName: 'port',
+                linkRoot: 'landingpages',
+                imgLinkArray: ["/StateSpecificCampaigns/HI/dental.html", "/012016/NewYear/new-years.html", "/012016/New-Years/new-year.html", "/112015/OC/index.html", "/122015/OPS/index.html", "/012016/TOP/index.html" ]
+              });
+          });
+          </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+            <header>
+              <div class="container">
+                <a href="index.html"><h1>Carin Slater</h1></a>
+                <div id="social">
+                  <div>
+                    <a href="https://www.linkedin.com/in/carinslater" target="_blank"><img src="img/linkedin-icon.png" alt="Carin Slater on Linked-in"></a>
+                  </div>
+                  <div>
+                    <a href="https://github.com/sugarfreq" target="_blank"><img src="img/github.png" alt="Carin Slater on github"></a>
+                  </div>
+                </div>
+              </div>
+            </header>
+            <nav>
+              <div class="container">
+                <ul class="top_nav">
+                  <li><a href="#">portfolio</a>
+                    <ul class="sub_nav">
+                      <li><a href="landing.html">landing pages</a></li>
+                      <li><a href="email.html">html emails</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="index.html#contact">contact</a></li>
+                  <li><a href="resume.html">resume</a></li>
+                </ul>
+              </div>
+            </nav>
+
+            <div id="port-thumbs" class="image-section">
+              <div class="container">
+                <div class="carousel">
+                  <h1>Select an image below to see it larger</h1>
+                  <div class="thumbs">
+                    <img src="img/port01.png" alt="" onclick="showbig(this.src)">
+                    <img src="img/port02.png" alt="" onclick="showbig(this.src)">
+                    <img src="img/port03.png" alt="" onclick="showbig(this.src)">
+                    <img src="img/port04.png" alt="" onclick="showbig(this.src)">
+                    <img src="img/port05.png" alt="" onclick="showbig(this.src)">
+                    <img src="img/port06.png" alt="" onclick="showbig(this.src)">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="port-carousel" class="image-section background-img">
+              <div class="container">
+                <div class="carousel">
+                  <img src="img/LeftArrow.png" alt="Previous" onclick="calcslide(-1)" >
+                  <a id="imglink" href="http://sugarfreq.github.io/landingpages/StateSpecificCampaigns/HI/dental.html" target="_blank"><img src="img/port01.png" alt="" id="bigpic"></a>
+                  <img src="img/RightArrow.png" alt="Next" onclick="calcslide(1)" >
+                </div>
+                <h1>Click to see the page live</h1>
+              </div>
+            </div>
+
+
+
+
+    </body>
+</html>
