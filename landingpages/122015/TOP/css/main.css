@@ -276,7 +276,7 @@ header span {
   letter-spacing: 20px; }
 
 #hero {
-  background: url("../img/hero-bkgrd.jpg") repeat-x center center;
+  background: url("../img/hero-bkgrd.png") repeat-x center center;
   background-color: #ebeded;
   height: auto;
   font-family: 'Oswald', sans-serif;
