@@ -452,7 +452,8 @@ h1.txt_lt {
 .image-section img.img_rt {
   position: absolute;
   top: 30px;
-  right: 0; }
+  right: 0;
+  width: 700px}
 
 h1.txt_rt {
   position: absolute;
@@ -462,7 +463,8 @@ h1.txt_rt {
 .image-section img.img_lt {
   position: absolute;
   top: 30px;
-  left: 0; }
+  left: 0;
+  width: 700px; }
 
 #last.image-section p.txt_rt {
   right: 288px; }
@@ -587,7 +589,7 @@ h1.txt_rt {
 #js {
   position: absolute;
   top: 255px;
-  right: 180px; }
+  right: 160px; }
 
 #design.text-section {
   background: url("../img/design-bkgrd2.png") center no-repeat;
@@ -599,29 +601,59 @@ h1.txt_rt {
   right: 290px;
   z-index: 100; }
 
-#temp1 {
+#pixel, #iphoneX, #samsung {
   position: absolute;
-  top: 260px;
-  right: 0;
-  z-index: 300;
-  width: 200px;
+}
+
+#pixel {
+  top: 50px;
+  left: 380px;
+  z-index: 330;
+  width: 290px;
   height: 171px; }
 
-#temp5 {
-  position: absolute;
-  top: 160px;
-  left: -30px;
+#iphoneX {
+  top: 200px;
+  left: 20px;
   z-index: 300;
-  width: 200px;
+  width: 180px;
   height: 171px; }
 
-#temp6 {
-  position: absolute;
-  top: 0;
-  left: 320px;
+#samsung {
+  top: 230px;
+  right: 40px;
   z-index: 200;
-  width: 200px;
+  width: 180px;
   height: 171px; }
+
+#pixel-email, #iphoneX-email, #samsung-email {
+  overflow: auto;
+  position: absolute;
+}
+
+#pixel-email {
+  top: 60px;
+  left: 402px;
+  z-index: 400;
+  width: 209px;
+  height: 122px;
+}
+
+#iphoneX-email {
+  top: 225px;
+  left: 51px;
+  z-index: 400;
+  width: 122px;
+  height: 245px;
+}
+
+#samsung-email {
+  top: 255px;
+  right: 67px;
+  z-index:400;
+  width: 122px;
+  height: 249px;
+}
 
 #design.text-section img {
   max-width: 100%;
@@ -756,21 +788,47 @@ h1.txt_rt {
     position: static;
     padding: 20px 20px 0 20px; }
 
-  #temp1, #temp5, #temp6 {
+  #design .container {
+    padding-bottom: 50px;
+  }
+
+  #design-p {
+    padding-bottom: 20px;
+  }
+
+  #pixel, #samsung, #iphoneX {
     display: inline-block;
-    position: static;
-    padding-bottom: 30px; }
+    vertical-align: middle;
+    position: static;}
 
-  #temp1:hover, #temp5:hover, #temp6:hover {
-    -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
-    transform: none; }
+  #samsung, #iphoneX {
+    width: 100px;
+  }
 
-  #design.text-section img:hover {
+  #pixel {
     width: 200px;
-    height: 171px; }
+    background-image: url('../img/Outlook-em-mo.png');
+    background-size: 100% 100%;
+    height: 110px;
+  }
+
+  #samsung {
+    background-image: url('../img/gmail-em-mo.png');
+    background-size: 100% 100%;
+    height: 167px;
+  }
+
+  #iphoneX {
+    background-image: url('../img/iphone-em-mo.png');
+    background-size: 100% 100%;
+    height: 167px;
+  }
+
+  #pixel img, #samsung img, #iphoneX img {display: none;}
+
+  #pixel-email, #samsung-email, #iphoneX-email {
+    display: none;
+  }
 
   #last.image-section .container {
     padding: 50px 0; }
