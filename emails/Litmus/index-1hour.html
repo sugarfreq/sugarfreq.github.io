@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head><!--yahoo fix--></head>
+
+<head>
+  <!--Help character display properly.-->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--Set the initial scale of the email.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Force Outlook clients to render with a better MS engine.-->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!--Help prevent blue links and autolinking-->
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <!--prevent Apple from reformatting and zooming messages.-->
+  <meta name="x-apple-disable-message-reformatting">
+
+  <!--target dark mode-->
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+
+  <!-- Allow for better image rendering on Windows hi-DPI displays. -->
+  <!--[if mso]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+
+  <!--to support dark mode meta tags-->
+  <style type="text/css">
+  :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+  </style>
+
+  <!--[if (gte mso 9)|(IE)]><!-->
+  <style>
+    h1, h2, h3, h4, h5, p, a, span, img, ul, ol, li {
+      font-family: 'proxima_nova', Helvetica, Arial, sans-serif !important;
+    }
+  </style>
+  <!--<![endif]-->
+
+  <style type="text/css">
+    body {
+      height: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      width: 100% !important;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+        word-spacing: normal;
+    }
+
+    div[style*="margin:16px 0"] {
+      margin: 0 !important;
+    }
+
+    table,
+    td {
+      border-collapse: collapse !important;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    img {
+      border: 0;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      display: block;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      padding: 0;
+      margin: 0;
+    }
+
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    u+#body a {
+      color: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    #MessageViewBody a {
+      color: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+
+    @font-face {
+      font-family: 'proxima_nova';
+      src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+      src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+        url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+        url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      mso-font-alt: 'Arial';
+    }
+
+    @font-face {
+      font-family: 'proxima_nova';
+      src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+      src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+        url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+        url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+      font-weight: bold;
+      font-style: normal;
+      mso-font-alt: 'Arial';
+    }
+
+    .link { color: #894582 !important; text-decoration: underline !important; }
+
+    a:hover, .link:hover {
+      text-decoration: none !important;
+    }
+
+    .footer .link { color: #4B525D !important; }
+    .dkFooter a.link { color: #ffffff !important; }
+
+    .fadeimg {
+      transition: 0.3s !important;
+      opacity: 1 !important;
+    }
+
+    .fadeimg:hover {
+      transition: 0.3s !important;
+      opacity: 0.5 !important;
+    }
+
+    /* start CTA HOVER EFFECTS */
+    .cta { transition: 0.5s !important; box-shadow:0 3px 6px rgba(0,0,0,.2); }
+    .cta span.text { transition: 0.5s !important; }
+    .cta:hover { transition: 0.5s !important; box-shadow: none !important; }
+    .cta:hover span.text { transition: 0.5s !important; color: #262524 !important; }
+    .cta-border:hover { border-bottom: 3px solid transparent !important; }
+    .btn-red:hover { background-color: #F78F7D !important;background-image:none !important; }
+    .btn-blue:hover { background-color: #B5CFE3 !important;background-image:none !important; }
+    .btn-green:hover { background-color: #8BD09C !important;background-image:none !important; }
+    .btn-purple:hover { background-color: #CCB6D4 !important;background-image:none !important; }
+    .btn-teal:hover { background-color: #6EAFA7 !important;background-image:none !important; }
+    .btn-orange:hover { background-color: #EBAB66 !important; }
+    .btn-yellow:hover { background-color: #FBECBC !important; }
+    .btn-tangerine:hover { background-color: #FACE8F !important; }
+    /* end CTA HOVER EFFECTS */
+
+    .mobile {
+      display: none;
+    }
+     .mob-inline {
+      display: none;
+    }
+
+    .faux-vid:hover img { opacity: 0 !important; }
+
+    .interactive { display: block; }
+    .fallback { display: none; }
+  </style>
+
+  <style>
+  input { display: none; }
+  label { display: inline-block; width: 35px; height: 35px; background-image: url('images/heart-off.png'); background-size: 100% 100%; margin: 0 12px; }
+
+  label:hover img  { opacity: 0; }
+
+  #cont-1-select:checked ~ #content-1 img, #cont-2-select:checked ~ #content-2 img, #cont-3-select:checked ~ #content-3 img { opacity: 0; }
+
+  .content { display: none; }
+
+  #cont-1-select:checked ~ .cont-1, #cont-2-select:checked ~ .cont-2, #cont-3-select:checked ~ .cont-3 { display: block !important; }
+
+  </style>
+
+  <style>
+    u + .body .gmail-screen { background:#000; mix-blend-mode:screen; }
+    u + .body .gmail-difference { background:#000; mix-blend-mode:difference; }
+    u + .body .cta:hover .gmail-screen { background: transparent; mix-blend-mode:normal; }
+    u + .body .cta:hover .gmail-difference { background: transparent; mix-blend-mode:normal; }
+  </style>
+
+    <!--mobile styles-->
+    <style>
+    @media screen and (max-width:600px) {
+      .wFull { width: 100% !important; }
+      .wInner { width: 80% !important; }
+
+      .desktop { width: 0 !important; display: none !important; }
+
+      .mobile { display: block !important; }
+
+      .faux-vid { width: 100% !important; height: auto !important; }
+
+      /* mobile font sizes */
+      .fs20 { font-size: 20px !important; }
+      .fs18 { font-size: 18px !important; }
+      .fs16 { font-size: 16px !important; }
+      .fs14 { font-size: 14px !important; }
+      .fs12 { font-size: 12px !important; }
+      .fs10 { font-size: 10px !important; }
+      .fs8 { font-size: 8px !important; }
+
+      /* mobile line heights */
+      .lh22 { line-height: 22px !important; }
+      .lh20 { line-height: 20px !important; }
+      .lh18 { line-height: 18px !important; }
+      .lh16 { line-height: 16px !important; }
+      .lh14 { line-height: 14px !important; }
+      .lh12 { line-height: 12px !important; }
+      .lh10 { line-height: 10px !important; }
+
+      /* mobile text align */
+      .cTxt { text-align: center !important; margin: 0 auto; }
+      .rTxt { text-align: right !important; }
+      .lTxt { text-align: left !important; }
+
+      /* mobile paddings */
+      .tPad-15 { padding-top: 15px !important; }
+      .tPad-10 { padding-top: 10px !important; }
+      .tPad-5 { padding-top: 5px !important; }
+
+      .rPad-15 { padding-right: 15px !important; }
+      .rPad-10 { padding-right: 10px !important; }
+      .rPad-5 { padding-right: 5px !important; }
+
+      .bPad-15 { padding-bottom: 15px !important; }
+      .bPad-10 { padding-bottom: 10px !important; }
+      .bPad-5 { padding-bottom: 5px !important; }
+
+      .lPad-15 { padding-left: 15px !important; }
+      .lPad-10 { padding-left: 10px !important; }
+      .lPad-5 { padding-left: 5px !important; }
+
+      /* mobile margins */
+      .tMar-15 { margin-top: 15px !important; }
+      .tMar-10 { margin-top: 10px !important; }
+      .tMar-5 { margin-top: 5px !important; }
+
+      .rMar-15 { margin-right: 15px !important; }
+      .rMar-10 { margin-right: 10px !important; }
+      .rMar-5 { margin-right: 5px !important; }
+
+      .bMar-15 { margin-bottom: 15px !important; }
+      .bMar-10 { margin-bottom: 10px !important; }
+      .bMar-5 { margin-bottom: 5px !important; }
+
+      .lMar-15 { margin-left: 15px !important; }
+      .lMar-10 { margin-left: 10px !important; }
+      .lMar-5 { margin-left: 5px !important; }
+    }
+  </style>
+
+  <!--dark mode styles-->
+  <!--dark mode styles-->
+  <!--these are just example classes that can be used.-->
+  <style>
+    @media (prefers-color-scheme: dark) {
+
+      /* Shows Dark Mode-Only Content, Like Images */
+      .dark-img {
+        display: block !important;
+        width: auto !important;
+        overflow: visible !important;
+        float: none !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        line-height: auto !important;
+        margin-top: 0px !important;
+        visibility: inherit !important;
+      }
+
+      /* Hides Light Mode-Only Content, Like Images */
+      .light-img {
+        display: none;
+        display: none !important;
+      }
+
+      /* Custom Dark Mode Background Color */
+      .darkmode {
+        background-color: #262524 !important; background: #262524 !important;
+      }
+      .darkmode2, .callout {
+        background-color: #0e0e0e !important; background: #0e0e0e !important;
+      }
+
+      /* Custom Dark Mode Font Colors */
+      h1, h2, h3, p, span, a, .plainTxt li {
+        color: #fdfdfd !important;
+      }
+
+
+      /* Custom Dark Mode Text Link Color */
+      .link { color: #7EABCE !important; }
+      .footer .link { color: #fdfdfd !important; }
+
+      .cta-border { color: #7EABCE !important; border-bottom: 3px solid #7EABCE !important; }
+      .cta-border span { color: #7EABCE !important; }
+      .btn-orange span, .btn-yellow span, .btn-tangerine span { color: initial !important; }
+    }
+
+    /* Copy dark mode styles for android support */
+    /* Shows Dark Mode-Only Content, Like Images */
+    [data-ogsc] .dark-img {
+      display: block !important;
+      width: auto !important;
+      overflow: visible !important;
+      float: none !important;
+      max-height: inherit !important;
+      max-width: inherit !important;
+      line-height: auto !important;
+      margin-top: 0px !important;
+      visibility: inherit !important;
+    }
+
+    /* Hides Light Mode-Only Content, Like Images */
+    [data-ogsc] .light-img {
+      display: none;
+      display: none !important;
+    }
+
+    /* Custom Dark Mode Background Color */
+    [data-ogsc] .darkmode {
+      background-color: #272623 !important;
+    }
+    [data-ogsc] .darkmode2, [data-ogsc] .callout {
+      background-color: #0e0e0e !important;
+    }
+
+    /* Custom Dark Mode Font Colors */
+    [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] h3, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] .plainTxt li {
+      color: #fdfdfd !important;
+    }
+
+    /* Custom Dark Mode Text Link Color */
+    [data-ogsc] .link { color: #7EABCE !important; }
+      [data-ogsc] .footer .link { color: #fdfdfd !important; }
+
+    [data-ogsc] .cta-border { color: #7EABCE !important; border-bottom: 3px solid #7EABCE !important; }
+    [data-ogsc] .cta-border span { color: #7EABCE !important; }
+    [data-ogsc] .btn-orange span, [data-ogsc] .btn-yellow span, [data-ogsc] .btn-tangerine span { color: initial !important; }
+
+  </style>
+
+  <style>
+  .checkbox-test:checked + div
+  {
+    display:block !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+</style>
+
+  <!--correct superscripts in Outlook-->
+  <!--[if (gte mso 9)|(IE)]>
+  <style>
+    sup{font-size:100% !important;}
+  </style>
+  <![endif]-->
+  <title></title>
+</head>
+
+<body id="body" class="darkmode" bgcolor="#fdfdfd" style="background-color:#fdfdfd;">
+  <!--hidden preheader with preh-header spacer hack-->
+  <div style="display:none;font-size:0px;color:transparent;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;">$PRE_HEADER$</div>
+  <div style="display:none;max-height:0px;overflow:hidden;"> &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp; </div>
+
+  <!--Non-human traffic link-->
+  <div style="display:none;font-size:0px;color:transparent;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;"> <a href="http://www.google.com">View in Browser</a></div>
+
+  <!--start of email-->
+  <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;">
+
+    <!--main content area-->
+    <tr>
+      <td align="center" valign="top">
+          <table class="wInner" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;">
+
+            <!--text content-->
+            <tr>
+              <td align="left" valign="top">
+                <a href="https://www.youtube.com/watch?v=Pfr5aX2DCio" class="faux-vid" style="background-image: url('images/josie-hero.gif'); background-size: 100% 100%; display: block; width: 600px; height: 380px;">
+                  <img src="images/josie-hero-play.jpg" width="600" alt="" style="width: 100%;" />
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+            	<td align="center" valign="top">
+
+                <!--interactive-->
+                <!--[if (gte mso 9)|(IE)]><!-->
+                <div class="interactive">
+                  <h1 style="font-family:Verdana,Arial,sans-serif;font-size:36px;line-height:46px;mso-line-height-rule:exactly;color:#894582;margin:28px 0 0; mso-ansi-font-size: 20px;"><a href="https://www.youtube.com/watch?v=Pfr5aX2DCio" style="color: #894582; text-decoration: none;">Josie and the Pussycats is the greatest movie of all time</a></h1>
+                  <p style="font-family:Verdana,Arial,sans-serif;font-size:18px;line-height:28px;mso-line-height-rule:exactly;color:#262524; mso-ansi-font-size: 14px; margin: 10px 0 20px;">Find out why by clicking the icons</p>
+
+                  <input type="radio" name="cont" id="cont-1-select" checked />
+                  <input type="radio" name="cont" id="cont-2-select" />
+                  <input type="radio" name="cont" id="cont-3-select" />
+
+                  <label for="cont-1-select" id="content-1"><img src="images/heart-on.png" width="35" /></label>
+                  <label for="cont-2-select" id="content-2"><img src="images/heart-on.png" width="35" /></label>
+                  <label for="cont-3-select" id="content-3"><img src="images/heart-on.png" width="35" /></label>
+
+                  <div class="cont-1 content" style="margin: 50px 0; width: 100%;">
+                    <img class="cTxt" src="images/gossip.gif" alt="animation of Parker Pose saying 'C'mon girls, sit down! We'll gossip!'" width="254" style="font-size: 18px; line-height: 28px; color: #262524; display: inline-block; width: 254px; padding-right: 30px;" />
+                    <div class="tPad-15" style="display: inline-block; width: 300px; vertical-align: top;">
+                      <h2 style="font-family:Verdana,Arial,sans-serif;font-size:24px;line-height:34px;mso-line-height-rule:exactly;color:#894582;margin-bottom:30px; mso-ansi-font-size: 20px; text-align: left;"><a href="https://www.youtube.com/watch?v=Pfr5aX2DCio" style="color: #894582; text-decoration: none;">Josie and the Pussycats is the greatest movie of all time</a></h2>
+                      <p style="font-family:Verdana,Arial,sans-serif;font-size:18px;line-height:28px;mso-line-height-rule:exactly;color:#262524; mso-ansi-font-size: 14px; text-align: left;">It is better than The Godfather, Star Wars, and Jaws combined, because Josie and the Pussycats is amazing...</p>
+                    </div>
+                  </div>
+
+                  <div class="cont-2 content" style="margin: 50px 0; width: 100%;">
+                    <img class="cTxt" src="images/nod.gif" alt="animation of Alan Cumming nodding his head" width="254" style="font-size: 18px; line-height: 28px; color: #262524; display: inline-block; width: 254px; padding-right: 30px;" />
+                    <div class="tPad-15" style="display: inline-block; width: 300px; vertical-align: top;">
+                      <h2 style="font-family:Verdana,Arial,sans-serif;font-size:24px;line-height:34px;mso-line-height-rule:exactly;color:#894582;margin-bottom:30px; mso-ansi-font-size: 20px; text-align: left;"><a href="https://www.youtube.com/watch?v=Pfr5aX2DCio" style="color: #894582; text-decoration: none;">And it makes me feel good</a></h2>
+                      <p style="font-family:Verdana,Arial,sans-serif;font-size:18px;line-height:28px;mso-line-height-rule:exactly;color:#262524; mso-ansi-font-size: 14px; text-align: left;">And it is the greatest movie of all time. The movie is fun because it’s about the importance of friendship. The good people are good friends and are sad when they stop being friends...</p>
+                    </div>
+                  </div>
+
+                  <div class="cont-3 content" style="margin: 50px 0; width: 100%;">
+                    <img class="cTxt" src="images/peace.gif" alt="animation of Seth Green doing a peace sign and a weird pouty face" width="254" style="font-size: 18px; line-height: 28px; color: #262524; display: inline-block; width: 254px; padding-right: 30px;" />
+                    <div class="tPad-15" style="display: inline-block; width: 300px; vertical-align: top;">
+                      <h2 style="font-family:Verdana,Arial,sans-serif;font-size:24px;line-height:34px;mso-line-height-rule:exactly;color:#894582;margin-bottom:30px; mso-ansi-font-size: 20px; text-align: left;"><a href="https://www.youtube.com/watch?v=Pfr5aX2DCio" style="color: #894582; text-decoration: none;">But are happy when they are friends again.</a></h2>
+                      <p style="font-family:Verdana,Arial,sans-serif;font-size:18px;line-height:28px;mso-line-height-rule:exactly;color:#262524; mso-ansi-font-size: 14px; text-align: left;">The bad people don’t have friends, and do evil things to make friends. But then they get caught, but they make friends anyways....</p>
+                    </div>
+                  </div>
+                </div>
+                <!--<![endif]-->
+
+                <!--fallback-->
+                <!--[if (gte mso 9)|(IE)]><!-->
+                <input type="checkbox" class="checkbox-test" style="display: none;" />
+                <!--<![endif]-->
+                <div class="fallback">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                    	<td style="font-size:0; padding: 50px 0 0;" align="center" valign="top">
+                    		<!--[if (gte mso 9)|(IE)]>
+                    		<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
+                    		<tr>
+                    		<td valign="top" style="width: 284px;">
+                    		<![endif]-->
+                    		<div class="wFull" style="display:inline-block;vertical-align:top;">
+                    			<table class="wFull" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 284px;">
+                    				<tr>
+                    					<td class="cTxt" align="left" valign="top">
+                                <img class="cTxt" src="images/gossip.gif" alt="animation of Parker Pose saying 'C'mon girls, sit down! We'll gossip!'" width="254" style="font-size: 18px; line-height: 28px; color: #262524;" />
+                    					</td>
+                    				</tr>
+                    			</table>
+                    		</div>
+                    		<!--[if (gte mso 9)|(IE)]>
+                    		</td><td valign="top" style="width:316px;">
+                    		<![endif]-->
+                    		<div style="display:inline-block;vertical-align:top;">
+                    			<table class="wFull" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:316px;">
+                    				<tr>
+                    					<td class="tPad-15" align="left" valign="top">
+                                <h2 style="font-family:Verdana,Arial,sans-serif;font-size:24px;line-height:34px;mso-line-height-rule:exactly;color:#894582;margin-bottom:30px; mso-ansi-font-size: 20px;"><a href="https://www.youtube.com/watch?v=Pfr5aX2DCio" style="color: #894582; text-decoration: none;">Josie and the Pussycats is the greatest movie of all time</a></h2>
+                                <p style="font-family:Verdana,Arial,sans-serif;font-size:18px;line-height:28px;mso-line-height-rule:exactly;color:#262524; mso-ansi-font-size: 14px;">It is better than The Godfather, Star Wars, and Jaws combined, because Josie and the Pussycats is amazing...</p>
+                    					</td>
+                    				</tr>
+                    			</table>
+                    		</div>
+                    		<!--[if (gte mso 9)|(IE)]>
+                    		</td>
+                    		</tr>
+                    		</table>
+                    		<![endif]-->
+                    	</td>
+                    </tr>
+                    <tr>
+                    	<td style="font-size:0; padding: 50px 0 0;" align="center" valign="top" dir="rtl">
+                    		<!--[if (gte mso 9)|(IE)]>
+                    		<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
+                    		<tr>
+                    		<td valign="top" style="width: 300px;">
+                    		<![endif]-->
+                    		<div class="wFull" style="display:inline-block;vertical-align:top;">
+                    			<table class="wFull" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 284px;" dir="ltr">
+                    				<tr>
+                    					<td class="cTxt" align="right" valign="top">
+                                <img class="cTxt" src="images/nod.gif" alt="animation of Alan Cumming nodding his head" width="254" style="font-size: 18px; line-height: 28px; color: #262524;" />
+                    					</td>
+                    				</tr>
+                    			</table>
+                    		</div>
+                    		<!--[if (gte mso 9)|(IE)]>
+                    		</td><td valign="top" style="width:316px;">
+                    		<![endif]-->
+                    		<div style="display:inline-block;vertical-align:top;">
+                    			<table class="wFull" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:316px;" dir="ltr">
+                    				<tr>
+                    					<td class="tPad-15" align="left" valign="top">
+                                <h2 style="font-family:Verdana,Arial,sans-serif;font-size:24px;line-height:34px;mso-line-height-rule:exactly;color:#894582;margin-bottom:30px; mso-ansi-font-size: 20px;"><a href="https://www.youtube.com/watch?v=Pfr5aX2DCio" style="color: #894582; text-decoration: none;">And it makes me feel good</a></h2>
+                                <p style="font-family:Verdana,Arial,sans-serif;font-size:18px;line-height:28px;mso-line-height-rule:exactly;color:#262524; mso-ansi-font-size: 14px;">And it is the greatest movie of all time. The movie is fun because it’s about the importance of friendship. The good people are good friends and are sad when they stop being friends...</p>
+                    					</td>
+                    				</tr>
+                    			</table>
+                    		</div>
+                    		<!--[if (gte mso 9)|(IE)]>
+                    		</td>
+                    		</tr>
+                    		</table>
+                    		<![endif]-->
+                    	</td>
+                    </tr>
+                    <tr>
+                    	<td style="font-size:0; padding: 50px 0 0;" align="center" valign="top">
+                    		<!--[if (gte mso 9)|(IE)]>
+                    		<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
+                    		<tr>
+                    		<td valign="top" style="width: 284px;">
+                    		<![endif]-->
+                    		<div class="wFull" style="display:inline-block;vertical-align:top;">
+                    			<table class="wFull" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 284px;">
+                    				<tr>
+                    					<td class="cTxt" align="left" valign="top">
+                                <img class="cTxt" src="images/peace.gif" alt="animation of Seth Green doing a peace sign and a weird pouty face" width="254" style="font-size: 18px; line-height: 28px; color: #262524;" />
+                    					</td>
+                    				</tr>
+                    			</table>
+                    		</div>
+                    		<!--[if (gte mso 9)|(IE)]>
+                    		</td><td valign="top" style="width:316px;">
+                    		<![endif]-->
+                    		<div style="display:inline-block;vertical-align:top;">
+                    			<table class="wFull" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:316px;">
+                    				<tr>
+                    					<td class="tPad-15" align="left" valign="top">
+                                <h2 style="font-family:Verdana,Arial,sans-serif;font-size:24px;line-height:34px; mso-ansi-font-size: 20px; mso-line-height-rule:exactly;color:#894582;margin-bottom:30px;"><a href="https://www.youtube.com/watch?v=Pfr5aX2DCio" style="color: #894582; text-decoration: none;">But are happy when they are friends again.</a></h2>
+                                <p style="font-family:Verdana,Arial,sans-serif;font-size:18px;line-height:28px;mso-line-height-rule:exactly;color:#262524; mso-ansi-font-size: 14px;">The bad people don’t have friends, and do evil things to make friends. But then they get caught, but they make friends anyways....</p>
+                    					</td>
+                    				</tr>
+                    			</table>
+                    		</div>
+                    		<!--[if (gte mso 9)|(IE)]>
+                    		</td>
+                    		</tr>
+                    		</table>
+                    		<![endif]-->
+                    	</td>
+                    </tr>
+                  </table>
+                </div>
+            	</td>
+            </tr>
+
+
+
+            <tr>
+                <td align="center" valign="top" style="padding: 0 0 50px;">
+                  <a href="https://www.youtube.com/watch?v=Pfr5aX2DCio" class="cta btn-purple" target="_blank" style="background:#894582;text-decoration:none;padding:12px 18px;color:#fff;border-radius:3px;display:inline-block;mso-padding-alt:0;font-weight:bold;font-family:Verdana,Arial,sans-serif; font-size: 16px;">
+                    <!--[if mso]><i style="letter-spacing:18px;mso-font-width:-100%;mso-text-raise:24pt">&nbsp;</i><![endif]--><span class="text" style="mso-text-raise:12pt;"><span class="gmail-screen"><span class="gmail-difference">See the full review</span></span></span><!--[if mso]><i style="letter-spacing:18px;mso-font-width:-100%">&nbsp;</i><![endif]--></a>
+                </td>
+              </tr>
+          </table>
+        </td>
+      </tr>
+      <!--footer-->
+      <tr>
+        <td class="darkmode2" align="center" valign="top" style="padding:40px 0; background-color: #E9E9E9;">
+          <p style="font-family: Verdana,Arial,sans-serif; font-size: 12px; color:#333333; line-height: 18px; mso-line-height-rule:exactly;">
+            Josie and the Pussycats is the Greatest Movie of All Time<br />
+            1234 Main Street<br />
+            Any Town, AS 56789
+          </p>
+            <p style="font-family: Verdana,Arial,sans-serif; font-size: 12px; color:#333333; line-height: 18px; mso-line-height-rule:exactly; margin-bottom: 15px;"><a href="http://unsubscribe.dmdconnects.com/hcpconnects/unsubscribe.aspx?c=5&e=$EMAIL_ADDRESS_$&j=$launchid()$" class="link" style="text-decoration:underline;color:#894582;">Unsubscribe</a></p>
+        </td>
+      </tr>
+    <!--/main content area-->
+  </table>
+</body>
+
+</html>
