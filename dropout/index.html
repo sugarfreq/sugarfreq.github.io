@@ -205,10 +205,9 @@
         text-decoration: none;
       }
 
-      .bring p, .hire p { color: #1185D7; }
+      .bring p, .hire p { color: #0d6fb5; }
 
       .dropout p { color: #595959; }
-
 
       .footer {
         background-color: #595959;
@@ -246,10 +245,6 @@
           width: 90% !important;
         }
 
-        .w80p {
-          width: 80% !important;
-        }
-
         .w40px {
           width: 40px !important;
           height: auto !important;
@@ -269,17 +264,8 @@
           text-align: center !important;
         }
 
-        .rTxt {
-          text-align: right !important;
-        }
-
         .lTxt {
           text-align: left !important;
-        }
-
-        /*mobile block align */
-        .cImg {
-          margin: 0 auto;
         }
 
         /* mobile paddings */
@@ -287,64 +273,8 @@
           padding-top: 20px !important;
         }
 
-        .tPad-10 {
-          padding-top: 20px !important;
-        }
-
-        .tPad-5 {
-          padding-top: 5px !important;
-        }
-
-        .tPad-0 {
-          padding-top: 0px !important;
-        }
-
-        .rPad-20 {
-          padding-right: 20px !important;
-        }
-
-        .rPad-10 {
-          padding-right: 20px !important;
-        }
-
-        .rPad-5 {
-          padding-right: 5px !important;
-        }
-
         .rPad-0 {
           padding-right: 0px !important;
-        }
-
-        .bPad-20 {
-          padding-bottom: 20px !important;
-        }
-
-        .bPad-10 {
-          padding-bottom: 20px !important;
-        }
-
-        .bPad-5 {
-          padding-bottom: 5px !important;
-        }
-
-        .bPad-0 {
-          padding-bottom: 0px !important;
-        }
-
-        .lPad-20 {
-          padding-left: 20px !important;
-        }
-
-        .lPad-10 {
-          padding-left: 20px !important;
-        }
-
-        .lPad-5 {
-          padding-left: 5px !important;
-        }
-
-        .lPad-0 {
-          padding-left: 0px !important;
         }
 
         .lMar-0 {
@@ -383,7 +313,7 @@
 
         .callout2,
         .header {
-          background-color: #0e6caf !important;
+          background-color: #0a558a !important;
         }
 
         .things { 
@@ -409,98 +339,82 @@
         }
 
         a {
-          color: #85c6f4;
+          color: #fcffff; font-weight: bold; text-decoration: underline;
         }
 
         a:hover  {
-          color: #fcffff;
+          color: #fcffff; 
+          text-decoration: none;
         }
         .footer a:hover {
           color: #fcffff;
           text-decoration: none;
         }
-
-        a.cta1 {
-          color: #fcffff !important;
-        }
-
-        a.cta1:hover {
-          color: #1185D7 !important;
-        }
-
-        a.cta2 {
-          color: #1185D7 !important;
-        }
-
-        a.cta2:hover {
-          color: #FCFDFF !important;
-        }
       }
 
       [data-ogsc] .dark-img {
-        display: block !important;
-        width: auto !important;
-        overflow: visible !important;
-        float: none !important;
-        max-height: inherit !important;
-        max-width: inherit !important;
-        line-height: auto !important;
-        margin-top: 0px !important;
-        visibility: inherit !important;
-      }
+          display: block !important;
+          width: auto !important;
+          overflow: visible !important;
+          float: none !important;
+          max-height: inherit !important;
+          max-width: inherit !important;
+          line-height: auto !important;
+          margin-top: 0px !important;
+          visibility: inherit !important;
+        }
 
-      [data-ogsc] .light-img {
-        display: none;
-        display: none !important;
-      }
+        [data-ogsc] .light-img {
+          display: none;
+          display: none !important;
+        }
 
-      [data-ogsb] .darkmode {
-        background-color: #595959 !important;
-      }
+        [data-ogsb] .darkmode {
+          background-color: #595959 !important;
+        }
 
-      [data-ogsb] .darkmode2 {
-        background-color: #302f2f !important;
-      }
+        .[data-ogsb] darkmode2, [data-ogsb] .bring.darkmode2, [data-ogsb] .hire.darkmode2 {
+          background-color: #302f2f !important;
+        }
 
-      [data-ogsb] .callout2,
-      [data-ogsb] .header {
-        background-color: #0e6caf !important;
-      }
+        [data-ogsb] .callout2,
+        [data-ogsb] .header {
+          background-color: #0a558a !important;
+        }
 
-      [data-ogsc] h1,
-      [data-ogsc] h2,
-      [data-ogsc] h3,
-      [data-ogsc] p,
-      [data-ogsc] span,
-      [data-ogsc] b,
-      [data-ogsc] .footer a {
-        color: #fcffff;
-      }
+        [data-ogsb] .things { 
+          background: url('https://sugarfreq.github.io/dropout/images/bkgrd-drk.png') !important; 
+          background-size: 100% auto !important;
+        }
 
-      [data-ogsc] a {
-        color: #85c6f4;
-      }
+        [data-ogsb] .quote { background-color: #595959 !important; }
+        [data-ogsc] .quote p { color: #fcffff !important; }
 
-      [data-ogsc] a:hover,
-      [data-ogsc] .footer a:hover {
-        color: #fcffff;
-      }
+        [data-ogsb] .flag { 
+          background-color: #7c0202 !important; 
+        }
 
-      [data-ogsc] a.cta1 {
-        color: #fcffff !important;
-      }
+        [data-ogsc] h1,
+        [data-ogsc] h2,
+        [data-ogsc] h3,
+        [data-ogsc] p,
+        [data-ogsc] span,
+        [data-ogsc] .footer a, [data-ogsc] .bring p, [data-ogsc] .hire p, [data-ogsc] .dropout p  {
+          color: #fcffff;
+        }
 
-      [data-ogsc] a.cta1:hover {
-        color: #1185D7 !important;
-      }
+        [data-ogsc] a {
+          color: #a8d8fa;
+        }
 
-      [data-ogsc] a.cta2 {
-        color: #1185D7 !important;
-      }
+        [data-ogsc] a:hover  {
+          color: #fcffff;
+        }
 
-      [data-ogsc] a.cta2:hover {
-        color: #FCFDFF !important;
-      }
+        [data-ogsc] .footer a:hover {
+          color: #fcffff;
+          text-decoration: none;
+        }
     </style>
     <style>
        u + .body .glist2 { margin-left: 10px !important; }
@@ -599,7 +513,7 @@
             <table class="w90p" role="presentation" style="width:600px;">
               <tr>
                 <td align="center" valign="top">
-                  <img src="https://sugarfreq.github.io/dropout/images/hero_img.png" alt="For your consideration: An image of a woman with blue and pink hair looking cockily at the camera. One can assume this is your next email maven, Carin Slater." width="600" height="300" style="width: 100%; max-width: 600px; height: auto;">
+                  <h1><img src="https://sugarfreq.github.io/dropout/images/hero_img.png" alt="For your consideration: An image of a woman with blue and pink hair looking cockily at the camera. One can assume this is your next email maven, Carin Slater." width="600" height="300" style="width: 100%; max-width: 600px; height: auto;"></h1>
                 </td>
               </tr>
             </table>
