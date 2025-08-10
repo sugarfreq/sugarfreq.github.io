@@ -264,6 +264,10 @@
             padding-left: 150px !important;
           }
 
+          .lMar-0 {
+            margin-left: 0px !important;
+          }
+
           .things-interactive div div img, .things div div p  { vertical-align: top !important; }
           .csslider {
             width: 100%;
@@ -303,6 +307,15 @@
             width: 300px;
             height: 540px;
           }
+          .navigation {
+            width: 244px;
+          }
+
+          #carousel input~.navigation>label {
+            margin: 30px 6px;
+          }
+
+
         }
 
 
