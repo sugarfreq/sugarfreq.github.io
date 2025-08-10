@@ -1,0 +1,362 @@
+
+
+    <!--Interactive styles-->
+    <style>
+      [owa] .hideme {
+        display: none !important;
+      }
+
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+
+        .interactive,
+        [class~=x_fallback] {
+          display: block;
+          margin: 0 auto 50px;
+        }
+
+        .interactive-inline,
+        [class~=x_fallback] {
+          display: inline-block;
+        }
+
+        .fallback,
+        [class~=x_interactive] {
+          display: none
+        }
+
+        .things-interactive p, .things-interactive a { color: #1185D7; }
+
+        #carousel {
+          display: block !important;
+          font-size: inherit !important;
+          line-height: inherit !important;
+          max-height: inherit !important;
+          overflow: visible !important;
+          margin: 0 auto;
+        }
+
+        .csslider {
+          display: block;
+          overflow: hidden;
+          position: relative;
+          text-align: left;
+          width: 100%;
+          height: 380px;
+        }
+
+        #carousel input {
+          display: none;
+          position: absolute;
+          visibility: hidden;
+        }
+
+        .viewfinder {
+          height: auto;
+          overflow: hidden;
+          width: 600px;
+          height: 300px;
+          margin: 0 auto;
+        }
+
+        .filmstrip {
+          display: table !important;
+          position: relative;
+          transition-duration: .5s;
+          transition-property: all;
+          transition-timing-function: ease-in-out;
+          width: 4800px;
+        }
+
+        .filmstrip>div {
+          display: table-cell !important;
+          height: auto;
+          max-width: 600px;
+          position: relative;
+          vertical-align: top;
+        }
+
+        .content-01,
+        .content-02,
+        .content-03,
+        .content-04,
+        .content-05,
+        .content-06,
+        .content-07,
+        .content-08 {
+          margin: auto;
+          text-align: center;
+          width: 600px;
+          height: 300px;
+        }
+
+        /* Navigation dots */
+        .navigation {
+          margin: 0 auto;
+          display: block;
+          width: 254px;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          position: absolute;
+          z-index: 10;
+        }
+
+        #carousel input~.navigation>label {
+          background-color: #D9D9D9;
+          border-radius: 10px;
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          margin: 30px 7px;
+        }
+
+        #carousel input#slides_1:checked~.navigation>label.label_1,
+        #carousel input#slides_2:checked~.navigation>label.label_2,
+        #carousel input#slides_3:checked~.navigation>label.label_3,
+        #carousel input#slides_4:checked~.navigation>label.label_4,
+        #carousel input#slides_5:checked~.navigation>label.label_5,
+        #carousel input#slides_6:checked~.navigation>label.label_6,
+        #carousel input#slides_7:checked~.navigation>label.label_7,
+        #carousel input#slides_8:checked~.navigation>label.label_8{
+          background-color: #1185D7;
+        }
+
+        /* Navigation arrows */
+
+        @keyframes arrowani {
+          0% {
+            width: 300px;
+          }
+
+          43% {
+            width: 300px;
+          }
+
+          45% {
+            width: 305px;
+          }
+
+          50% {
+            width: 300px;
+          }
+
+          55% {
+            width: 305px;
+          }
+
+          57% {
+            width: 300px;
+          }
+
+          100% {
+            width: 300px;
+          }
+        }
+
+        .arrows {
+          animation: arrowani 5s infinite alternate ease-in;
+          box-sizing: content-box;
+          left: 0;
+          margin: auto;
+          padding: 0;
+          position: absolute;
+          right: 0;
+          bottom: 36px;
+          transition: 2s !important;
+          user-select: none;
+          z-index: 0;
+        }
+
+        .arrows label {
+          position: absolute;
+        }
+
+        #carousel input:first-of-type:checked~.arrows label.goto-last,
+        #carousel input#slides_1:checked~.arrows>label:nth-of-type(0),
+        #carousel input#slides_2:checked~.arrows>label:nth-of-type(1),
+        #carousel input#slides_3:checked~.arrows>label:nth-of-type(2),
+        #carousel input#slides_4:checked~.arrows>label:nth-of-type(3),
+        #carousel input#slides_5:checked~.arrows>label:nth-of-type(4),
+        #carousel input#slides_6:checked~.arrows>label:nth-of-type(5),
+        #carousel input#slides_7:checked~.arrows>label:nth-of-type(6),
+        #carousel input#slides_8:checked~.arrows>label:nth-of-type(7) {
+          border: solid #1185D7;
+          border-width: 0 5px 5px 0;
+          display: block;
+          left: 0;
+          padding: 10px;
+          right: auto;
+          transform: rotate(135deg);
+        }
+
+        #carousel input:last-of-type:checked~.arrows label.goto-first,
+        #carousel input#slides_1:checked~.arrows>label:nth-of-type(2),
+        #carousel input#slides_2:checked~.arrows>label:nth-of-type(3),
+        #carousel input#slides_3:checked~.arrows>label:nth-of-type(4),
+        #carousel input#slides_4:checked~.arrows>label:nth-of-type(5),
+        #carousel input#slides_5:checked~.arrows>label:nth-of-type(6),
+        #carousel input#slides_6:checked~.arrows>label:nth-of-type(7),
+        #carousel input#slides_7:checked~.arrows>label:nth-of-type(8) {
+          border: solid #1185D7;
+          border-width: 0 5px 5px 0;
+          display: block;
+          left: auto;
+          padding: 10px;
+          right: 0;
+          transform: rotate(-45deg);
+        }
+
+        #carousel input#slides_1:checked~.viewfinder .filmstrip {
+          right: 0 !important;
+        }
+
+        #carousel input#slides_2:checked~.viewfinder .filmstrip {
+          right: 100% !important;
+        }
+
+        #carousel input#slides_3:checked~.viewfinder .filmstrip {
+          right: 200% !important;
+        }
+
+        #carousel input#slides_4:checked~.viewfinder .filmstrip {
+          right: 300% !important;
+        }
+
+        #carousel input#slides_5:checked~.viewfinder .filmstrip {
+          right: 400% !important;
+        }
+
+        #carousel input#slides_6:checked~.viewfinder .filmstrip {
+          right: 500% !important;
+        }
+
+        #carousel input#slides_7:checked~.viewfinder .filmstrip {
+          right: 600% !important;
+        }
+
+        #carousel input#slides_8:checked~.viewfinder .filmstrip {
+          right: 700% !important;
+        }
+
+         @media screen and (max-width:600px) { 
+          .w80p { 
+            width: 80% !important;
+            height: auto !important;
+          }
+
+          .tPad-40 {
+            padding-top: 40px !important;
+          }
+
+          .tPad-50 {
+            padding-top: 50px !important;
+          }
+
+          .tPad-70 {
+            padding-top: 70px !important;
+          }
+
+          .tPad-180 {
+            padding-top: 180px !important;
+          }
+
+          .lPad-150 {
+            padding-left: 150px !important;
+          }
+
+          .things-interactive div div img, .things div div p  { vertical-align: top !important; }
+          .csslider {
+            width: 100%;
+            height: 630px;
+          }
+
+          .viewfinder {
+            height: auto;
+            overflow: hidden;
+            width: 300px;
+            height: 560px;
+            margin: 0 auto;
+          }
+
+          .filmstrip {
+            width: 2400px;
+          }
+
+          .filmstrip>div {
+            display: table-cell !important;
+            height: auto;
+            max-width: 300px;
+            position: relative;
+            vertical-align: top;
+          }
+
+          .content-01,
+          .content-02,
+          .content-03,
+          .content-04,
+          .content-05,
+          .content-06,
+          .content-07,
+          .content-08 {
+            margin: auto;
+            text-align: center;
+            width: 300px;
+            height: 540px;
+          }
+        }
+
+
+        @media (prefers-color-scheme: dark) {
+          .things-interactive p {
+            color: #fcffff;
+          }
+          
+          .things-interactive {
+            background: url('https://sugarfreq.github.io/dropout/images/bkgrd-drk.png') !important;
+            background-size: 100% auto !important;
+          }
+
+          #carousel input~.navigation>label {
+            background-color: #fcffff;
+          }
+
+          #carousel input:first-of-type:checked~.arrows label.goto-last,
+          #carousel input#slides_1:checked~.arrows>label:nth-of-type(0),
+          #carousel input#slides_2:checked~.arrows>label:nth-of-type(1),
+          #carousel input#slides_3:checked~.arrows>label:nth-of-type(2),
+          #carousel input#slides_4:checked~.arrows>label:nth-of-type(3),
+          #carousel input#slides_5:checked~.arrows>label:nth-of-type(4),
+          #carousel input#slides_6:checked~.arrows>label:nth-of-type(5),
+          #carousel input#slides_7:checked~.arrows>label:nth-of-type(6),
+          #carousel input#slides_8:checked~.arrows>label:nth-of-type(7) {
+            border: solid #91c5eb;
+            border-width: 0 5px 5px 0;
+          }
+
+          #carousel input:last-of-type:checked~.arrows label.goto-first,
+          #carousel input#slides_1:checked~.arrows>label:nth-of-type(2),
+          #carousel input#slides_2:checked~.arrows>label:nth-of-type(3),
+          #carousel input#slides_3:checked~.arrows>label:nth-of-type(4),
+          #carousel input#slides_4:checked~.arrows>label:nth-of-type(5),
+          #carousel input#slides_5:checked~.arrows>label:nth-of-type(6),
+          #carousel input#slides_6:checked~.arrows>label:nth-of-type(7),
+          #carousel input#slides_7:checked~.arrows>label:nth-of-type(8) {
+            border: solid #91c5eb;
+            border-width: 0 5px 5px 0;
+          }
+
+          #carousel input#slides_1:checked~.navigation>label.label_1,
+          #carousel input#slides_2:checked~.navigation>label.label_2,
+          #carousel input#slides_3:checked~.navigation>label.label_3,
+          #carousel input#slides_4:checked~.navigation>label.label_4,
+          #carousel input#slides_5:checked~.navigation>label.label_5,
+          #carousel input#slides_6:checked~.navigation>label.label_6,
+          #carousel input#slides_7:checked~.navigation>label.label_7,
+          #carousel input#slides_8:checked~.navigation>label.label_8{
+            background-color: #91c5eb;
+          }
+          
+        }
+
+      }
+    </style>

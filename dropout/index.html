@@ -167,7 +167,6 @@
         text-decoration: underline;
       }
 
-
       a.cta1:hover,
       a.cta2:hover {
         text-decoration: none;
@@ -205,9 +204,14 @@
         text-decoration: none;
       }
 
-      .bring p, .hire p { color: #0d6fb5; }
+      .bring p,
+      .hire p {
+        color:#1185D7;
+      }
 
-      .dropout p { color: #595959; }
+      .dropout p {
+        color: #595959;
+      }
 
       .footer {
         background-color: #595959;
@@ -243,6 +247,11 @@
 
         .w90p {
           width: 90% !important;
+        }
+
+        .w80p {
+          width: 80% !important;
+          height: auto !important;
         }
 
         .w40px {
@@ -284,19 +293,36 @@
     </style>
     <!--Making the fun stuff work-->
     <style>
-      .stop_scrolling:hover img { display: none; 
+      .stop_scrolling:hover img {
+        display: none;
       }
+
       @media screen and (max-width:600px) {
-        a.stop_scrolling { 
-          width: 200px !important; 
-          height: 127px !important; 
-          background: url('https://sugarfreq.github.io/dropout/images/hover-mobile.png') !important; background-size: 100% 100% !important;}
-        .stop_scrolling:hover img { 
-            display: none !important; 
+        a.stop_scrolling {
+          width: 200px !important;
+          height: 127px !important;
+          background: url('https://sugarfreq.github.io/dropout/images/hover-mobile.png') !important;
+          background-size: 100% 100% !important;
         }
-        .bring { background: url('https://sugarfreq.github.io/dropout/images/bring-bkgrd-mobile.png') !important; background-size: 100% auto !important; }
-        .hire { background: url('https://sugarfreq.github.io/dropout/images/hire-bkgrd2-mobile.png') !important; background-size: 100% auto !important; background-color: #F4F4F4 !important; }
+
+        .stop_scrolling:hover img {
+          display: none !important;
+        }
+
+        .bring {
+          background: url('https://sugarfreq.github.io/dropout/images/bring-bkgrd-mobile.png') !important;
+          background-color: #F4F4F4 !important;
+          background-size: 100% auto !important;
+        }
+
+        .hire {
+          background: url('https://sugarfreq.github.io/dropout/images/hire-bkgrd2-mobile.png') !important;
+          background-size: 100% auto !important;
+          background-color: #F4F4F4 !important;
+        }
       }
+
+      .interactive, .interactive-inline { display: none; }
     </style>
 
     <!--dark mode styles-->
@@ -304,6 +330,17 @@
       @media (prefers-color-scheme: dark) {
         .dark-img {
           display: block !important;
+          width: auto !important;
+          overflow: visible !important;
+          float: none !important;
+          max-height: inherit !important;
+          max-width: inherit !important;
+          line-height: auto !important;
+          margin-top: 0px !important;
+          visibility: inherit !important;
+        }
+        .dark-img-inline {
+          display: inline-block !important;
           width: auto !important;
           overflow: visible !important;
           float: none !important;
@@ -323,7 +360,9 @@
           background-color: #595959 !important;
         }
 
-        .darkmode2, .bring.darkmode2, .hire.darkmode2 {
+        .darkmode2,
+        .bring.darkmode2,
+        .hire.darkmode2 {
           background-color: #302f2f !important;
         }
 
@@ -332,16 +371,21 @@
           background-color: #0a558a !important;
         }
 
-        .things { 
-          background: url('https://sugarfreq.github.io/dropout/images/bkgrd-drk.png') !important; 
+        .things {
+          background: url('https://sugarfreq.github.io/dropout/images/bkgrd-drk.png') !important;
           background-size: 100% auto !important;
         }
 
-        .quote { background-color: #595959 !important; }
-        .quote p { color: #fcffff !important; }
+        .quote {
+          background-color: #595959 !important;
+        }
 
-        .flag { 
-          background-color: #7c0202 !important; 
+        .quote p {
+          color: #fcffff !important;
+        }
+
+        .flag {
+          background-color: #7c0202 !important;
         }
 
         h1,
@@ -350,18 +394,24 @@
         p,
         span,
         b,
-        .footer a, .bring p, .hire p, .dropout p  {
+        .footer a,
+        .bring p,
+        .hire p,
+        .dropout p {
           color: #fcffff;
         }
 
         a {
-          color: #fcffff; font-weight: bold; text-decoration: underline;
+          color: #fcffff;
+          font-weight: bold;
+          text-decoration: underline;
         }
 
-        a:hover  {
-          color: #fcffff; 
+        a:hover {
+          color: #fcffff;
           text-decoration: none;
         }
+
         .footer a:hover {
           color: #fcffff;
           text-decoration: none;
@@ -369,119 +419,106 @@
       }
 
       [data-ogsc] .dark-img {
-          display: block !important;
-          width: auto !important;
-          overflow: visible !important;
-          float: none !important;
-          max-height: inherit !important;
-          max-width: inherit !important;
-          line-height: auto !important;
-          margin-top: 0px !important;
-          visibility: inherit !important;
-        }
+        display: block !important;
+        width: auto !important;
+        overflow: visible !important;
+        float: none !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        line-height: auto !important;
+        margin-top: 0px !important;
+        visibility: inherit !important;
+      }
 
-        [data-ogsc] .light-img {
-          display: none;
-          display: none !important;
-        }
+      [data-ogsc] .light-img {
+        display: none;
+        display: none !important;
+      }
 
-        [data-ogsb] .darkmode {
-          background-color: #595959 !important;
-        }
+      [data-ogsb] .darkmode {
+        background-color: #595959 !important;
+      }
 
-        .[data-ogsb] darkmode2, [data-ogsb] .bring.darkmode2, [data-ogsb] .hire.darkmode2 {
-          background-color: #302f2f !important;
-        }
+      .[data-ogsb] darkmode2,
+      [data-ogsb] .bring.darkmode2,
+      [data-ogsb] .hire.darkmode2 {
+        background-color: #302f2f !important;
+      }
 
-        [data-ogsb] .callout2,
-        [data-ogsb] .header {
-          background-color: #0a558a !important;
-        }
+      [data-ogsb] .callout2,
+      [data-ogsb] .header {
+        background-color: #0a558a !important;
+      }
 
-        [data-ogsb] .things { 
-          background: url('https://sugarfreq.github.io/dropout/images/bkgrd-drk.png') !important; 
-          background-size: 100% auto !important;
-        }
+      [data-ogsb] .things {
+        background: url('https://sugarfreq.github.io/dropout/images/bkgrd-drk.png') !important;
+        background-size: 100% auto !important;
+      }
 
-        [data-ogsb] .quote { background-color: #595959 !important; }
-        [data-ogsc] .quote p { color: #fcffff !important; }
+      [data-ogsb] .quote {
+        background-color: #595959 !important;
+      }
 
-        [data-ogsb] .flag { 
-          background-color: #7c0202 !important; 
-        }
+      [data-ogsc] .quote p {
+        color: #fcffff !important;
+      }
 
-        [data-ogsc] h1,
-        [data-ogsc] h2,
-        [data-ogsc] h3,
-        [data-ogsc] p,
-        [data-ogsc] span,
-        [data-ogsc] .footer a, [data-ogsc] .bring p, [data-ogsc] .hire p, [data-ogsc] .dropout p  {
-          color: #fcffff;
-        }
+      [data-ogsb] .flag {
+        background-color: #7c0202 !important;
+      }
 
-        [data-ogsc] a {
-          color: #a8d8fa;
-        }
+      [data-ogsc] h1,
+      [data-ogsc] h2,
+      [data-ogsc] h3,
+      [data-ogsc] p,
+      [data-ogsc] span,
+      [data-ogsc] .footer a,
+      [data-ogsc] .bring p,
+      [data-ogsc] .hire p,
+      [data-ogsc] .dropout p {
+        color: #fcffff;
+      }
 
-        [data-ogsc] a:hover  {
-          color: #fcffff;
-        }
+      [data-ogsc] a {
+        color: #a8d8fa;
+      }
 
-        [data-ogsc] .footer a:hover {
-          color: #fcffff;
-          text-decoration: none;
-        }
-    </style>
-    <style>
-       u + .body .glist2 { margin-left: 10px !important; }
-      
-      @media only screen and (max-width: 640px) {
-          u + .body .glist2 { margin-left: 25px !important; }
+      [data-ogsc] a:hover {
+        color: #fcffff;
+      }
+
+      [data-ogsc] .footer a:hover {
+        color: #fcffff;
+        text-decoration: none;
       }
     </style>
+    <style>
+      u+.body .glist2 {
+        margin-left: 10px !important;
+      }
 
-    <!--correct superscripts in Outlook-->
+      @media only screen and (max-width: 640px) {
+        u+.body .glist2 {
+          margin-left: 25px !important;
+        }
+      }
+    </style>
     <!--[if (gte mso 9)|(IE)]>
     <style>
-      sup {
-        font-size: 100% !important;
+      li {
+        margin-left: -37px !important;
       }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      a.cta {
-        font-family: Georgia, serif !important;
+      .forDumbOutlooks li {
+        margin-left: 27px !important;
+        mso-special-format: bullet;
       }
 
-      p,
-      a,
-      span,
-      img,
-      ul,
-      ol,
-      li,
-      img {
-        font-family: Arial, sans-serif !important;
+      .forDumbOutlooks {
+        margin-left: -25px !important;
       }
     </style>
     <![endif]-->
-     <!--[if (gte mso 9)|(IE)]>
-    <style>
-      li { 
-      margin-left: -37px !important;
-      }
-      .forDumbOutlooks li { 
-      margin-left:27px !important;
-      mso-special-format: bullet;
-      } 
-      .forDumbOutlooks {
-      margin-left: -25px !important;
-      }
-    </style>
-  <![endif]-->
     <title></title>
   </head>
 
@@ -501,14 +538,14 @@
             <table class="w90p" role="presentation" style="width: 600px;">
               <tr>
                 <td align="center" valign="top" style="padding: 20px 10px;">
-                  <p style="font-size: 16px;">For the full Smarty Pants experience, please <a href="https://sugarfreq.github.io/dropout/index.html" style="font-size: 16px;">view this email as a web page</a>, in Apple Mail, or on an iPhone. </p>
+                  <p class="fallback" style="font-size: 16px;">For the full Smarty Pants experience, please <a href="https://sugarfreq.github.io/dropout/index.html" style="font-size: 16px;">view this email as a web page</a>, in Apple Mail, or on an iPhone. </p>
                 </td>
               </tr>
             </table>
           </td>
         </tr>
         <!--Full Width Image content-->
-        <tr>
+        <tr class="fallback">
           <td align="center" valign="top" style="padding: 20px 0 0;">
             <table class="w90p" role="presentation" style="width:600px;">
               <tr>
@@ -527,166 +564,368 @@
                 <td align="left" valign="top">
                   <p style="margin-bottom: 20px;">Hi Intrepid Heroes!</p>
                   <p style="margin-bottom: 20px;">You might be wondering why you&rsquo;ve received this email.</p>
-                  
-                  <p style="margin-bottom: 20px;">Before you send me to spam, please give me a quick moment to convince you that <em>despite not have any open marketing positions, you should hire me.</em></p>
-                  <p style="margin-bottom: 20px;">And really, if we&rsquo;re going to do this in true  Dropout fashion, we should use a slideshow. </p>
-                  <p style="margin-bottom: 20px;">Most people think a slideshow can&rsquo;t be done in email, but most people are not me. So, if you really want to see what you can do with email, <a class="link" href="https://sugarfreq.github.io/dropout/index.html">check it out in your browser</a>, in Apple mail, or on an iPhone.</p>
-                  <p>No? Ok, then read on...</p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td align="center" style="padding: 40px 0 0;">
-            <table class="w90p darkmode2 dropout" role="presentation" style="width:600px; background-color: #FEEA3B;">
 
-          <tr>
-            <td align="center" valign="top" style="font-size:0; padding: 20px;">
-              <!--[if (gte mso 9)|(IE)]>
-              <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
-              <tr>
-              <td valign="middle" style="width: 150px;">
-              <![endif]-->
-              <div style="display:inline-block;vertical-align:middle;">
-                <table class="w90p" role="presentation" style="width: 150px;">
-                  <tr>
-                    <td align="left" valign="top">
-                      <img src="https://sugarfreq.github.io/dropout/images/dropout-logo.png" alt="The Dropout logo on a cheery yellow background." width="150" height="150" style="width: 100%; max-width: 150px; height: auto;" />
-                    </td>
-                  </tr>
-                </table>
-              </div>
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td valign="middle" style="width:410px;">
-              <![endif]-->
-              <div style="display:inline-block;vertical-align:middle;">
-                <table class="w90p" role="presentation" style="width:410px;">
-                  <tr>
-                    <td align="left" valign="top">
-                      <p><strong>You:</strong> Have an amazing marketing strategy run by a small but stellar marketing team.</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="left" valign="top" style="padding: 10px 0 0;">
-                      <p><strong>Me:</strong> Looking to join a killer marketing team where I can bring my passion for creating personalized and interactive messaging to help drive engagemnt.</p>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-              <!--[if (gte mso 9)|(IE)]>
-              </td>
+                  <p style="margin-bottom: 20px;">Before you send me to spam, please give me a quick moment to convince you that <em>despite not have any open marketing positions, you should hire me.</em></p>
+                  <p style="margin-bottom: 20px;">And really, if we&rsquo;re going to do this in true Dropout fashion, we should use a slideshow. <span class="interactive-inline"> <br class="mobile" />Use the navigation below. </span></p>
+                  <p class="fallback" style="margin-bottom: 20px;">Most people think a slideshow can&rsquo;t be done in email, but most people are not me. So, if you really want to see what you can do with email, <a class="link" href="https://sugarfreq.github.io/dropout/index.html">check it out in your browser</a>, in Apple mail, or on an iPhone.</p>
+                  <p class="fallback">No? Ok, then read on...</p>
+                </td>
               </tr>
-              </table>
-              <![endif]-->
-            </td>
-          </tr>
             </table>
           </td>
         </tr>
-        <!--Callout 2-->
         <tr>
-          <td align="center" style="padding: 40px 0 0;">
-            <table class="w90p callout2" role="presentation" style="width:600px; background-color: #1185D7;">
-                  <!--2-column copy led content-->
-          <tr>
-            <td align="center" valign="top" dir="rtl" style="font-size:0; padding: 20px 0;">
-              <!--[if (gte mso 9)|(IE)]>
-              <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;">
-              <tr>
-              <td valign="middle" style="width: 200px;">
-              <![endif]-->
-              <div style="display:inline-block;vertical-align:middle;">
-                <table class="w90p" cellpadding="0" cellspacing="0" border="0" dir="ltr" role="presentation" style="width: 200px;">
-                  <tr>
-                    <td class="cTxt" align="right" valign="top">
-                      <a href="https://sugarfreq.github.io/dropout/index.html" class="stop_scrolling" style="display: block; width: 200px; height: 372px; background: url('https://sugarfreq.github.io/dropout/images/hover.png'); background-size: 100% 100%;"><img class="desktop" src="https://sugarfreq.github.io/dropout/images/ymkmf-animated.gif" alt="Clips from different videos around the web that Carin has been a part of." width="200" height="372" style="width: 100%; max-width: 200px; height: auto;" />
-                      <!--[if !mso]><! -->
-                      <img class="mobile" src="https://sugarfreq.github.io/dropout/images/ymkmf-animated-mobile.gif" width="200" height="127" alt="Clips from different videos around the web that Carin has been a part of." style="display: none;" />
-                      <!--<![endif]--></a>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-              <!--[if (gte mso 9)|(IE)]>
-              </td><td valign="middle" style="width: 340px;">
-              <![endif]-->
-              <div class="rPad-0"style="display:inline-block;vertical-align:middle; padding-right: 20px;">
-                <table class="w90p"  cellpadding="0" cellspacing="0" border="0" dir="ltr" role="presentation" style="width: 340px;">
-                  <tr>
-                    <td class="tPad-20" align="left" valign="top">
-                      <h2>You might know me from...</h2>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="left" valign="top" style="padding: 20px 0 0;">
-                      <div class="forDumbOutlooks">
-                      <ul class="glist2" style="margin:0; margin-left: 25px; padding:0;" align="left">
-                        <li style="color: #fcffff; font-size: 16px; line-height: 1.5em; margin-bottom: 5px;"><a href="https://www.litmus.com/blog/10-minute-emails-how-to-save-time-on-email-development">Building an email in 10 min</a> to give you more time to optimize and create engaging lifecycle programs.</li>
-                        <li style="color: #fcffff; font-size: 16px; line-height: 1.5em; margin-bottom: 5px;">Your marketing metrics: I <a href="https://www.linkedin.com/posts/carinslater_i-would-like-to-apologize-to-dropouts-marketing-activity-7297653997497135105-i9md/">click ALL the links</a> when I get your emails.</li>
-                        <li style="color: #fcffff; font-size: 16px; line-height: 1.5em; margin-bottom: 5px;">When I dressed up as <a href="https://youtu.be/w2kgddc-pew?si=pz1pZOiif0pWHxR5">Bob Ross</a> to offer optimization ideas for other marketers.</li>
-                        <li style="color: #fcffff; font-size: 16px; line-height: 1.5em; margin-bottom: 5px;">My A/B testing webinar <a href="https://litmus.wistia.com/medias/afmb35mu1f">&ldquo;Get in email geeks, we&rsquo;re running another test&rdquo;</a>.</li>
-                        <li style="color: #fcffff; font-size: 16px; line-height: 1.5em;">My <a href="https://www.linkedin.com/posts/carinslater_its-dropouts-6-year-anniversary-activity-7246524792307101696-e8gk/">many attempts</a> to convert everyone to Dropout. (I&rsquo;m already helping your marketing department!)</li>
-                      </ul>
+          <td class="interactive">
+            <!--[if (!mso)&(gte IE 10)]><!-->
+              <div id="carousel" class="hideme" style="display: none; max-height: 0; line-height: 0; font-size: 0; overflow: hidden; mso-hide: all;">
+                <div class="csslider">
+                  <input type="radio" name="slides" checked id="slides_1">
+                  <input type="radio" name="slides" id="slides_2">
+                  <input type="radio" name="slides" id="slides_3">
+                  <input type="radio" name="slides" id="slides_3">
+                  <input type="radio" name="slides" id="slides_4">
+                  <input type="radio" name="slides" id="slides_5">
+                  <input type="radio" name="slides" id="slides_6">
+                  <input type="radio" name="slides" id="slides_7">
+                  <input type="radio" name="slides" id="slides_8">
+                  <div class="viewfinder">
+                    <div class="filmstrip">
+                      <div>
+                        <div class="content-01">
+                          <img class="desktop" src="https://sugarfreq.github.io/dropout/images/hero-interactive.png" alt="For your consideration: An image of a woman with blue and pink hair looking cockily at the camera. One can assume this is your next email maven, Carin Slater." width="600" height="300" style="width: 100%; max-width: 600px; height: auto;">
+                          <img class="mobile" src="https://sugarfreq.github.io/dropout/images/hero-mobile.png" alt="For your consideration: An image of a woman with blue and pink hair looking cockily at the camera. One can assume this is your next email maven, Carin Slater." width="300" height="560" style="width: 100%; max-width: 600px; height: auto;">
+                        </div>
                       </div>
-                    </td>
-                  </tr>
-                </table>
+                      <div>
+                        <div class="content-02 darkmode2" style="background-color: #FEEA3B;">
+                          <div class="w90p tPad-180" style="margin:0 auto; display: block; width: 500px; padding-top: 85px;">
+                            <p style="text-align: left; font-size: 24px;"><strong>You:</strong></p>
+                            <p style="text-align: left;">Have an amazing marketing strategy run by a small but stellar marketing team.</p>
+                          </div>
+                          <div class="lPad-150 tPad-70" style="padding-left: 465px;"><img src="https://sugarfreq.github.io/dropout/images/dropout-logo.png" alt="The Dropout logo on a cheery yellow background." width="130" height="130" style="width: 100%; max-width: 130px; height: auto;" />
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="content-03 callout2" style="background-color: #1185D7;">
+                          <div class="w90p tPad-180" style="margin:0 auto; display: block; width: 500px; padding-top: 100px;">
+                            <p style="text-align: left; font-size: 24px; color: #fcffff;"><strong>Me:</strong></p>
+                            <p style="text-align: left; color: #fcffff;">Looking to join a killer marketing team where I can bring my passion for creating personalized and interactive emails to increase their impact.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="content-04 callout2" style="background-color: #1185D7;">
+                          <div class="w90p tPad-40" style="margin:0 auto; display: block; width: 550px; padding-top: 20px;">
+                            <p style="text-align: left; font-size: 24px; color: #fcffff;"><strong>You might know me from... </strong></p>
+                            <ul style="text-align: left; color: #fcffff;">
+                              <li style="margin-bottom: 10px;"><a href="https://www.litmus.com/blog/10-minute-emails-how-to-save-time-on-email-development" style="color: #fcffff; font-weight: bold;">Building an email in 10 min</a> to give you more time to optimize and create engaging lifecycle programs.</li>
+                              <li style="margin-bottom: 10px;">Your marketing metrics: <a href="https://www.linkedin.com/posts/carinslater_i-would-like-to-apologize-to-dropouts-marketing-activity-7297653997497135105-i9md/" style="color: #fcffff;font-weight: bold;">I click ALL the links</a> when I get your emails. #SorryNotSorry</li>
+                              <li style="margin-bottom: 10px;">When I dressed up as <a href="https://www.youtube.com/watch?v=w2kgddc-pew" style="color: #fcffff; font-weight: bold;">Bob Ross</a> to offer optimization ideas for other marketers.</li>
+                              <li style="margin-bottom: 10px;">My A/B testing webinar &ldquo;<a href="https://litmus.wistia.com/medias/afmb35mu1f" style="color: #fcffff; font-weight: bold;">Get in email geeks, we&rsquo;re running another test</a>&rdquo; about the importance of learning from losing tests.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="content-05 bring darkmode2" style="background: url('https://sugarfreq.github.io/dropout/images/bring-bkgrd.png'); background-size: 100% auto; background-color: #F4F4F4;">
+                          <div class="w90p tPad-70" style="margin:0 auto; display: block; width: 550px; padding-top: 30px;">
+                            <p style="text-align: left; font-size: 24px;"><strong>What I can do for Dropout</strong></p>
+                            <p style="text-align: left; margin-top: 20px;">With a data driven approach powered by thoughtful a/b<br class="desktop"/ >
+                            and multivariate testing I am able to create unified heartfelt<br class="desktop" />
+                            customer journeys and personalized lead nurture campaigns <br class="desktop" />
+                            that help drive subscriptions and reduce churn. </p>
+                            <p class="lMar-0" style="text-align: left; margin: 20px 0 0 110px;">You have amazing content. <br />
+                            You have amazing fans.<br />
+                            I can help you have amazing marketing communications.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="content-06 things-interactive" style="background: url('https://sugarfreq.github.io/dropout/images/bkgrd.jpg'); background-size: 100% auto;">
+                          <div class="w90p" style="margin:0 auto; display: block; width: 550px; padding-top: 10px;">
+                            <p style="text-align: left; font-size: 24px;"><strong>Things people say about me: </strong></p>
+                            <div class="darkmode" style="background-color: #fcffff; padding: 10px; border-radius: 13px; margin: 10px 0 0 0;">
+                              <img class="w40px light-img quote" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="70" height="90" style="display: inline-block;vertical-align: middle;" aria-hidden="true" />
+                              <img class="w40px dark-img-inline quote" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;vertical-align: middle;" aria-hidden="true" />
+                            <p class="w80p quote" style="display: inline-block; text-align: left; vertical-align: middle; width: 450px;">&ldquo;I wish I could shrink you and put you in my pocket and take you back to work with me to help me optimize my email program&rdquo; - Litmus Live attendee</p>
+                            </div>
+                            <div class="darkmode" style="background-color: #fcffff; padding: 10px; border-radius: 13px; margin: 10px 0 0 0;">
+                              <img class="w40px light-img quote" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="70" height="90" style="display: inline-block;vertical-align: middle;" aria-hidden="true" />
+                              <img class="w40px dark-img-inline quote" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;vertical-align: middle;" aria-hidden="true" />
+                            <p class="w80p quote" style="display: inline-block; text-align: left; vertical-align: middle; width: 450px;">&ldquo;Carin was the heart of the email program at Litmus. She brought energy, creativity, and expertise to everything she touched.&rdquo; - Allison Lee, Growth Marketing Manager at Amplitude</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="content-07 things-interactive" style="background: url('https://sugarfreq.github.io/dropout/images/bkgrd.jpg'); background-size: 100% auto;">
+                          <div class="w90p" style="margin:0 auto; display: block; width: 550px; padding-top: 10px;">
+                            <p style="text-align: left; font-size: 24px;"><strong>Things people say about me: </strong></p>
+                            <div class="darkmode" style="background-color: #fcffff; padding: 10px; border-radius: 13px; margin: 10px 0 0 0;">
+                              <img class="w40px light-img" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="70" height="90" style="display: inline-block;vertical-align: middle;" aria-hidden="true" />
+                              <img class="w40px dark-img-inline" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;vertical-align: middle;" aria-hidden="true" />
+                            <p class="w80p" style="display: inline-block; text-align: left; vertical-align: middle; width: 450px;">&ldquo;Carin dared to beat me out for a job over 4 years ago and I will never forgive her. Of course she was amazing.&rdquo; - Megan Boshuyzen, award winning Senior Email Developer at Sinch</p>
+                            </div>
+                            <div class="darkmode" style="background-color: #fcffff; padding: 10px; border-radius: 13px; margin: 10px 0 0 0;">
+                              <img class="w40px light-img" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="70" height="90" style="display: inline-block;vertical-align: middle;" aria-hidden="true" />
+                              <img class="w40px dark-img-inline" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;vertical-align: middle;" aria-hidden="true" />
+                            <p class="w80p" style="display: inline-block; text-align: left; vertical-align: middle; width: 450px;">&ldquo;I would happily take a 50% pay cut for the chance to work with Carin again. Fortunately for my bank account, that doesn&rsquo;t seem to be an option.&rdquo; - Taylor Anthony, Email Marketer at Indeed</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="content-08 hire darkmode2" style="background: url('https://sugarfreq.github.io/dropout/images/hire-bkgrd2.png');background-color: #F4F4F4; background-size: 100% auto;">
+                          <div class="w90p tPad-50" style="margin:0 auto; display: block; width: 500px; padding-top: 30px;">
+                            <p style="text-align: center; font-size: 24px;"><strong>Hire me and let&rsquo;s start making<br class="desktop" />
+                            email great again.</strong></p>
+                            <p style="text-align: center; margin: 20px 0 0 0;">Ew. I hate that. <br class="mobile" />We&rsquo;ll just supercharge your&nbsp;current&nbsp;marketing.</p>
+                            <p style="text-align: center; margin: 20px 0 0 0; font-weight: bold;">Carin Slater</p>
+                            <p class="desktop"><a href="mailto: carin.slater@gmail.com" style="font-weight: bold;">carin.slater@gmail.com</a><br />
+                            <a href="https://www.carinslater.com" style="font-weight: bold;">www.carinslater.com</a> | <a href="https://linkedin.com/in/carinslater" style="font-weight: bold;">linkedin.com/in/carinslater</a></p>
+                            <p class="mobile" style="margin-top: 10px;"><a href="mailto: carin.slater@gmail.com" style="font-weight: bold;">carin.slater@gmail.com</a></p>
+                            <p class="mobile" style="margin-top: 10px;"><a href="https://www.carinslater.com" style="font-weight: bold;">www.carinslater.com</a></p>
+                            <p class="mobile" style="margin-top: 10px;"><a href="https://linkedin.com/in/carinslater" style="font-weight: bold;">linkedin.com/in/carinslater</a></p>
+                            <p style="text-align: center; margin: 20px 0 0 0;">Thank you for your time.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="navigation">
+                    <label for="slides_1" class="label_1"></label>
+                    <label for="slides_2" class="label_2"></label>
+                    <label for="slides_3" class="label_3"></label>
+                    <label for="slides_4" class="label_4"></label>
+                    <label for="slides_5" class="label_5"></label>
+                    <label for="slides_6" class="label_6"></label>
+                    <label for="slides_7" class="label_7"></label>
+                    <label for="slides_8" class="label_8"></label>
+                    <br>
+                  </div>
+                  <div class="arrows">
+                    <label for="slides_1" class="label_1"></label>
+                    <label for="slides_2" class="label_2"></label>
+                    <label for="slides_3" class="label_3"></label>
+                    <label for="slides_4" class="label_4"></label>
+                    <label for="slides_5" class="label_5"></label>
+                    <label for="slides_6" class="label_6"></label>
+                    <label for="slides_7" class="label_7"></label>
+                    <label for="slides_8" class="label_8"></label>
+                    <label for="slides_1" class="goto-first"></label>
+                    <label for="slides_8" class="goto-last"></label>
+                    <br>
+                  </div>
+                </div>
               </div>
-              <!--[if (gte mso 9)|(IE)]>
-              </td>
-              </tr>
-              </table>
-              <![endif]-->
-            </td>
-          </tr>
-            </table>
+            <!--<![endif]-->
           </td>
         </tr>
-        <!--callout-->
-        <tr>
-          <td align="center" style="padding: 20px 0 0;">
-            <table class="w90p bring darkmode2" role="presentation" style="width:600px; background: url('https://sugarfreq.github.io/dropout/images/bring-bkgrd.png'); background-size: 100% auto; background-color: #F4F4F4;">
+        <tr class="fallback">
+          <td align="center">
+            <table class="w100p" role="presentation">
               <tr>
-                <td align="left" style="padding: 33px 20px 10px;">
-                  <h2>What I can do for Dropout</h2>
-                </td>
-              </tr>
-              <tr>
-                <td align="left" style="padding: 0 20px 33px;">
-                  <p>With a data driven approach powered by a testing focused <br class="desktop">mindset, I put subscribers at the center of captivating <br class="desktop">customer journeys and lead nurture campaigns that increase <br class="desktop">engagement, drive subscriptions, and reduce churn.</p>
-                  <p class="lMar-0" style="margin: 20px 0 0 110px;">You have amazing content. <br>
-                  You have amazing fans.<br>
-                  I can help you have amazing marketing communications.</p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <!--Callout 2-->
-        <tr>
-          <td align="center" style="padding: 20px 0 0;">
-            <table class="w90p things" role="presentation" style="width:600px; background: url('https://sugarfreq.github.io/dropout/images/bkgrd.jpg'); background-size: 100% auto;">
-              <tr>
-                <td align="center" style="padding: 20px 20px 10px;">
-                  <h2>Things people say about me:</h2>
-                </td>
-              </tr>
-              <tr>
-                <td align="center" style="padding: 10px 40px;">
-                  <table role="presentation" style="width: 100%;">
+                <td align="center" style="padding: 40px 0 0;">
+                  <table class="w90p darkmode2 dropout" role="presentation" style="width:600px; background-color: #FEEA3B;">
+
                     <tr>
-                      <td class="quote" style="background-color: #fcffff; border-radius: 13px; padding: 10px;">
-                        <table role="presentation">
+                      <td align="center" valign="top" style="font-size:0; padding: 20px;">
+                        <!--[if (gte mso 9)|(IE)]>
+                        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 100%;">
                           <tr>
-                            <td valign="top">
-                              <img class="w40px light-img" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="70" height="90" aria-hidden="true" />
-                              <!--[if !mso]><! -->
-                              <img class="dark-img" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;" aria-hidden="true" />
-                              <!--<![endif]-->
+                            <td valign="middle" style="width: 150px;">
+                        <![endif]-->
+                              <div style="display:inline-block;vertical-align:middle;">
+                                <table class="w90p" role="presentation" style="width: 150px;">
+                                  <tr>
+                                    <td align="left" valign="top">
+                                      <img src="https://sugarfreq.github.io/dropout/images/dropout-logo.png" alt="The Dropout logo on a cheery yellow background." width="150" height="150" style="width: 100%; max-width: 150px; height: auto;" />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <!--[if (gte mso 9)|(IE)]>
                             </td>
-                            <td valign="top" style="padding-left: 10px;">
-                              <p style="color: #1185D7;">&ldquo;I wish I could shrink you and put you in my pocket and take you back to work with me to help me optimize my email program&rdquo; - Litmus Live attendee</p>
+                            <td valign="middle" style="width:410px;">
+                              <![endif]-->
+                              <div style="display:inline-block;vertical-align:middle;">
+                                <table class="w90p" role="presentation" style="width:410px;">
+                                  <tr>
+                                    <td align="left" valign="top">
+                                      <p><strong>You:</strong> Have an amazing marketing strategy run by a small but stellar marketing team.</p>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="left" valign="top" style="padding: 10px 0 0;">
+                                      <p><strong>Me:</strong> Looking to join a killer marketing team where I can bring my passion for creating personalized and interactive messaging to help drive engagemnt.</p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                        <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                          </tr>
+                        </table>
+                        <![endif]-->
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!--Callout 2-->
+              <tr>
+                <td align="center" style="padding: 40px 0 0;">
+                  <table class="w90p callout2" role="presentation" style="width:600px; background-color: #1185D7;">
+                    <!--2-column copy led content-->
+                    <tr>
+                      <td align="center" valign="top" dir="rtl" style="font-size:0; padding: 20px 0;">
+                        <!--[if (gte mso 9)|(IE)]>
+                        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;">
+                          <tr>
+                            <td valign="middle" style="width: 200px;">
+                        <![endif]-->
+                              <div style="display:inline-block;vertical-align:middle;">
+                                <table class="w90p" cellpadding="0" cellspacing="0" border="0" dir="ltr" role="presentation" style="width: 200px;">
+                                  <tr>
+                                    <td class="cTxt" align="right" valign="top">
+                                      <a href="https://sugarfreq.github.io/dropout/index.html" class="stop_scrolling" style="display: block; width: 200px; height: 372px; background: url('https://sugarfreq.github.io/dropout/images/hover.png'); background-size: 100% 100%;"><img class="desktop" src="https://sugarfreq.github.io/dropout/images/ymkmf-animated.gif" alt="Clips from different videos around the web that Carin has been a part of." width="200" height="372" style="width: 100%; max-width: 200px; height: auto;" />
+                                        <!--[if !mso]><! -->
+                                          <img class="mobile" src="https://sugarfreq.github.io/dropout/images/ymkmf-animated-mobile.gif" width="200" height="127" alt="Clips from different videos around the web that Carin has been a part of." style="display: none;" />
+                                        <!--<![endif]--></a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            <td valign="middle" style="width: 340px;">
+                              <![endif]-->
+                              <div class="rPad-0" style="display:inline-block;vertical-align:middle; padding-right: 20px;">
+                                <table class="w90p" cellpadding="0" cellspacing="0" border="0" dir="ltr" role="presentation" style="width: 340px;">
+                                  <tr>
+                                    <td class="tPad-20" align="left" valign="top">
+                                      <h2>You might know me from...</h2>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="left" valign="top" style="padding: 20px 0 0;">
+                                      <div class="forDumbOutlooks">
+                                        <ul class="glist2" style="margin:0; margin-left: 25px; padding:0;" align="left">
+                                          <li style="color: #fcffff; font-size: 16px; line-height: 1.5em; margin-bottom: 5px;"><a href="https://www.litmus.com/blog/10-minute-emails-how-to-save-time-on-email-development">Building an email in 10 min</a> to give you more time to optimize and create engaging lifecycle programs.</li>
+                                          <li style="color: #fcffff; font-size: 16px; line-height: 1.5em; margin-bottom: 5px;">Your marketing metrics: I <a href="https://www.linkedin.com/posts/carinslater_i-would-like-to-apologize-to-dropouts-marketing-activity-7297653997497135105-i9md/">click ALL the links</a> when I get your emails.</li>
+                                          <li style="color: #fcffff; font-size: 16px; line-height: 1.5em; margin-bottom: 5px;">When I dressed up as <a href="https://youtu.be/w2kgddc-pew?si=pz1pZOiif0pWHxR5">Bob Ross</a> to offer optimization ideas for other marketers.</li>
+                                          <li style="color: #fcffff; font-size: 16px; line-height: 1.5em; margin-bottom: 5px;">My A/B testing webinar <a href="https://litmus.wistia.com/medias/afmb35mu1f">&ldquo;Get in email geeks, we&rsquo;re running another test&rdquo;</a>.</li>
+                                          <li style="color: #fcffff; font-size: 16px; line-height: 1.5em;">My <a href="https://www.linkedin.com/posts/carinslater_its-dropouts-6-year-anniversary-activity-7246524792307101696-e8gk/">many attempts</a> to convert everyone to Dropout. (I&rsquo;m already helping your marketing department!)</li>
+                                        </ul>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                        <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                          </tr>
+                        </table>
+                        <![endif]-->
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!--callout-->
+              <tr>
+                <td align="center" style="padding: 20px 0 0;">
+                  <table class="w90p bring darkmode2" role="presentation" style="width:600px; background: url('https://sugarfreq.github.io/dropout/images/bring-bkgrd.png'); background-size: 100% auto; background-color: #F4F4F4;">
+                    <tr>
+                      <td align="left" style="padding: 33px 20px 10px;">
+                        <h2>What I can do for Dropout</h2>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left" style="padding: 0 20px 33px;">
+                        <p>With a data driven approach powered by a testing focused <br class="desktop">mindset, I put subscribers at the center of captivating <br class="desktop">customer journeys and lead nurture campaigns that increase <br class="desktop">engagement, drive subscriptions, and reduce churn.</p>
+                        <p class="lMar-0" style="margin: 20px 0 0 110px;">You have amazing content. <br>
+                          You have amazing fans.<br>
+                          I can help you have amazing marketing communications.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!--Callout 2-->
+              <tr>
+                <td align="center" style="padding: 20px 0 0;">
+                  <table class="w90p things" role="presentation" style="width:600px; background: url('https://sugarfreq.github.io/dropout/images/bkgrd.jpg'); background-size: 100% auto;">
+                    <tr>
+                      <td align="center" style="padding: 20px 20px 10px;">
+                        <h2>Things people say about me:</h2>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="padding: 10px 40px;">
+                        <table role="presentation" style="width: 100%;">
+                          <tr>
+                            <td class="quote" style="background-color: #fcffff; border-radius: 13px; padding: 10px;">
+                              <table role="presentation">
+                                <tr>
+                                  <td valign="top">
+                                    <img class="w40px light-img" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="70" height="90" aria-hidden="true" />
+                                    <!--[if !mso]><! -->
+                                      <img class="w40px dark-img" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;" aria-hidden="true" />
+                                    <!--<![endif]-->
+                                  </td>
+                                  <td valign="top" style="padding-left: 10px;">
+                                    <p style="color: #1185D7;">&ldquo;I wish I could shrink you and put you in my pocket and take you back to work with me to help me optimize my email program&rdquo; - Litmus Live attendee</p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="padding: 10px 40px;">
+                        <table role="presentation" style="width: 100%;">
+                          <tr>
+                            <td class="quote" style="background-color: #fcffff; border-radius: 13px; padding: 10px;">
+                              <table>
+                                <tr>
+                                  <td valign="top">
+                                    <img class="w40px light-img" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="69" height="90" aria-hidden="true" />
+                                    <!--[if !mso]><! -->
+                                      <img class="dark-img" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;" aria-hidden="true" />
+                                    <!--<![endif]-->
+                                  </td>
+                                  <td valign="top" style="padding-left: 10px;">
+                                    <p style="color: #1185D7;">&ldquo;Carin was the heart of the email program at Litmus. She brought energy, creativity, and expertise to everything she touched.&rdquo; - Allison Lee, Growth Marketing Manager at Amplitude</p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="padding: 10px 40px 20px;">
+                        <table role="presentation" style="width: 100%;">
+                          <tr>
+                            <td class="quote" style="background-color: #fcffff; border-radius: 13px; padding: 10px;">
+                              <table>
+                                <tr>
+                                  <td valign="top">
+                                    <img class="w40px light-img" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="69" height="90" aria-hidden="true" />
+                                    <!--[if !mso]><! -->
+                                      <img class="dark-img" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;" aria-hidden="true" />
+                                    <!--<![endif]-->
+                                  </td>
+                                  <td valign="top" style="padding-left: 10px;">
+                                    <p style="color: #1185D7;">&ldquo;Carin dared to beat me out for a job over four years ago and I will never forgive her. Of course she was amazing.&rdquo; - Megan Boshuyzen, award winning Senior Email Developer at Sinch</p>
+                                  </td>
+                                </tr>
+                              </table>
                             </td>
                           </tr>
                         </table>
@@ -695,83 +934,38 @@
                   </table>
                 </td>
               </tr>
+              <!--callout-->
               <tr>
-                <td align="center" style="padding: 10px 40px;">
-                  <table role="presentation" style="width: 100%;">
+                <td align="center" style="padding: 20px 0 0;">
+                  <table class="w90p darkmode2 hire" role="presentation" style="width:600px; background: url('https://sugarfreq.github.io/dropout/images/hire-bkgrd2.png');background-color: #F4F4F4; background-size: 100% auto;">
                     <tr>
-                      <td class="quote" style="background-color: #fcffff; border-radius: 13px; padding: 10px;">
-                        <table>
-                          <tr>
-                            <td valign="top">
-                              <img class="w40px light-img" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="69" height="90" aria-hidden="true" />
-                              <!--[if !mso]><! -->
-                              <img class="dark-img" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;" aria-hidden="true" />
-                              <!--<![endif]-->
-                            </td>
-                            <td valign="top" style="padding-left: 10px;">
-                              <p style="color: #1185D7;">&ldquo;Carin was the heart of the email program at Litmus. She brought energy, creativity, and expertise to everything she touched.&rdquo; - Allison Lee, Growth Marketing Manager at Amplitude</p>
-                            </td>
-                          </tr>
-                        </table>
+                      <td align="center" style="padding: 40px 20px 10px;">
+                        <h2>Hire me and let&rsquo;s start making <br class="desktop">email&nbsp;great <br class="mobile">again.</h2>
                       </td>
                     </tr>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td align="center" style="padding: 10px 40px 20px;">
-                  <table role="presentation" style="width: 100%;">
                     <tr>
-                      <td class="quote" style="background-color: #fcffff; border-radius: 13px; padding: 10px;">
-                        <table>
-                          <tr>
-                            <td valign="top">
-                              <img class="w40px light-img" src="https://sugarfreq.github.io/dropout/images/quote-img.png" alt="" width="69" height="90" aria-hidden="true" />
-                              <!--[if !mso]><! -->
-                              <img class="dark-img" src="https://sugarfreq.github.io/dropout/images/quote-img-dark.png" alt="" width="70" height="90" style="display: none;" aria-hidden="true" />
-                              <!--<![endif]-->
-                            </td>
-                            <td valign="top" style="padding-left: 10px;">
-                              <p style="color: #1185D7;">&ldquo;Carin dared to beat me out for a job over four years ago and I will never forgive her. Of course she was amazing.&rdquo; - Megan Boshuyzen, award  winning Senior Email Developer at Sinch</p>
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <!--callout-->
-        <tr>
-          <td align="center" style="padding: 20px 0 0;">
-            <table class="w90p darkmode2 hire" role="presentation" style="width:600px; background: url('https://sugarfreq.github.io/dropout/images/hire-bkgrd2.png');background-color: #F4F4F4; background-size: 100% auto;">
-              <tr>
-                <td align="center" style="padding: 40px 20px 10px;">
-                  <h2>Hire me and let&rsquo;s start making <br class="desktop">email great <br class="mobile"> again.</h2>
-                </td>
-              </tr>
-              <tr>
-                <td align="center" style="padding: 0 20px 20px;">
-                  <p>Ew. I hate that. Let&rsquo;s just supercharge your current marketing.</p>
-                  <p style="margin: 30px 0 0 0;"><strong>Carin Slater<br>
+                      <td align="center" style="padding: 0 20px 20px;">
+                        <p>Ew. I hate that. Let&rsquo;s just supercharge your current marketing.</p>
+                        <p style="margin: 30px 0 0 0;"><strong>Carin Slater<br>
                   <span class="desktop"><a href="mailto:carin.slater@gmail.com" style="font-weight: bold;">carin.slater@gmail.com</a><br>
                   <a href="https://www.carinslater.com" style="font-weight: bold;">www.carinslater.com</a> | <a href="https://linkedin.com/in/carinslater" style="font-weight: bold;">linkedin.com/in/carinslater</a></strong></p>
-                  </span>
-                  <p class="mobile" style="margin: 10px 0 0 0;"><a href="mailto:carin.slater@gmail.com" style="font-weight: bold;">carin.slater@gmail.com</a></p>
-                  <p class="mobile" style="margin: 10px 0 0 0;"><a href="https://www.carinslater.com" style="font-weight: bold;">www.carinslater.com</a></p>
-                  <p class="mobile" style="margin: 10px 0 0 0;"><a href="https://linkedin.com/in/carinslater" style="font-weight: bold;">linkedin.com/in/carinslater</a></p>
-                  <p style="margin: 30px 0 0 0;">Thank you for your time.</p>
+                        </span>
+                        <p class="mobile" style="margin: 10px 0 0 0;"><a href="mailto:carin.slater@gmail.com" style="font-weight: bold;">carin.slater@gmail.com</a></p>
+                        <p class="mobile" style="margin: 10px 0 0 0;"><a href="https://www.carinslater.com" style="font-weight: bold;">www.carinslater.com</a></p>
+                        <p class="mobile" style="margin: 10px 0 0 0;"><a href="https://linkedin.com/in/carinslater" style="font-weight: bold;">linkedin.com/in/carinslater</a></p>
+                        <p style="margin: 30px 0 0 0;">Thank you for your time.</p>
+                      </td>
+                    </tr>
+                  </table>
                 </td>
               </tr>
             </table>
+
           </td>
         </tr>
         <!--footer-->
         <tr>
-          <td align="center" valign="top" style="line-height: 30px; font-size: 30px;">
+          <td class="fallback" align="center" valign="top" style="line-height: 30px; font-size: 30px;">
             &nbsp;
           </td>
         </tr>
