@@ -383,36 +383,50 @@ const CATEGORY_CONFIG = {
   "Daily Clean Up After Yourself":    { color:"#f9a8d4", bg:"#2a0a20",  icon:"✅", choreDie:null },
 };
 
+// multiDay: chores that span two days — if done on day[0], skip on day[1]
+const MULTI_DAY_PAIRS = {
+  "Put away clean clothes in bins":   ["Saturday","Sunday"],
+  "Hang up clean clothes in closet":  ["Saturday","Sunday"],
+  "Fold clean socks":                 ["Friday","Saturday"],
+  "Do a weekend chore":               ["Saturday","Sunday"],
+  "Take clean clothes upstairs":      ["Friday","Saturday"],
+};
+
 const CHORES = [
-  { name:"Take clean clothes upstairs",          days:["Friday","Saturday"],                                                        minTime:0,  cat:"Laundry",                          rollable:false },
-  { name:"Do Dishes",                            days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],      minTime:5,  cat:"Daily Clean Up After Yourself",    rollable:true,  timeDie:6  },
-  { name:"Have a snack",                         days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
-  { name:"Read",                                 days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],      minTime:15, cat:"Bettering Yourself",               rollable:true,  timeDie:10 },
-  { name:"Math Homework",                        days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                         minTime:0,  cat:"Bettering Yourself",               rollable:false },
-  { name:"Empty Backpack & Hang Up",             days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
-  { name:"Clean and put away lunchbox & tupperware", days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                     minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
-  { name:"Practice Flute",                       days:["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"],                 minTime:5,  cat:"Bettering Yourself",               rollable:true,  timeDie:6  },
-  { name:"Practice Drums",                       days:["Tuesday","Wednesday","Thursday","Saturday","Sunday"],                       minTime:10, cat:"Bettering Yourself",               rollable:true,  timeDie:6  },
-  { name:"Pack a lunch",                         days:["Monday","Tuesday","Wednesday","Thursday","Sunday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
-  { name:"Set Alarm",                            days:["Monday","Tuesday","Wednesday","Thursday","Sunday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
-  { name:"Clean shoe rack",                      days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],      minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
-  { name:"Clean Light Switches",                 days:["Wednesday"],                                                                minTime:0,  cat:"Household Chores",                 rollable:false },
-  { name:"Clean Doorknobs",                      days:["Thursday"],                                                                 minTime:0,  cat:"Household Chores",                 rollable:false },
-  { name:"Hang up drum sticks & headphones",     days:["Monday","Friday"],                                                          minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
-  { name:"Hang up basketball bag",               days:["Thursday"],                                                                 minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
-  { name:"Take out garbages on 2nd floor",       days:["Tuesday"],                                                                  minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
-  { name:"Pick up Basement",                     days:["Tuesday","Friday"],                                                         minTime:5,  cat:"Household Chores",                 rollable:true,  timeDie:6  },
-  { name:"Clean Bedroom Desk Off",               days:["Wednesday","Thursday"],                                                     minTime:5,  cat:"Big Take Care of Yourself Chores", rollable:true,  timeDie:4  },
-  { name:"Clean Bedroom Floor",                  days:["Tuesday","Saturday"],                                                       minTime:5,  cat:"Big Take Care of Yourself Chores", rollable:true,  timeDie:4  },
-  { name:"Dust Basement",                        days:["Wednesday"],                                                                minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
-  { name:"Clean Bathroom sink and floor",        days:["Monday","Thursday"],                                                        minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:6  },
-  { name:"Clean Bedroom Closet",                 days:["Wednesday","Saturday"],                                                     minTime:5,  cat:"Big Take Care of Yourself Chores", rollable:true,  timeDie:6  },
-  { name:"Set out Clothes for Tomorrow",         days:["Monday","Tuesday","Wednesday","Thursday","Sunday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  // ── Laundry ──
+  { name:"Take clean clothes upstairs",          days:["Friday","Saturday"],                                                        minTime:2,  cat:"Laundry",                          rollable:true,  timeDie:4  },
   { name:"Put away clean clothes in bins",       days:["Saturday","Sunday"],                                                        minTime:3,  cat:"Laundry",                          rollable:true,  timeDie:4  },
   { name:"Hang up clean clothes in closet",      days:["Saturday","Sunday"],                                                        minTime:5,  cat:"Laundry",                          rollable:true,  timeDie:4  },
   { name:"Fold clean socks",                     days:["Friday","Saturday"],                                                        minTime:2,  cat:"Laundry",                          rollable:true,  timeDie:4  },
+  // ── Bettering Yourself ──
+  { name:"Read",                                 days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],      minTime:15, cat:"Bettering Yourself",               rollable:true,  timeDie:10 },
+  { name:"Math Homework",                        days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                         minTime:2,  cat:"Bettering Yourself",               rollable:true,  timeDie:6  },
+  { name:"Practice Flute",                       days:["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"],                 minTime:5,  cat:"Bettering Yourself",               rollable:true,  timeDie:6  },
+  { name:"Practice Drums",                       days:["Tuesday","Wednesday","Thursday","Saturday","Sunday"],                       minTime:10, cat:"Bettering Yourself",               rollable:true,  timeDie:6  },
+  // ── Household Chores ──
+  { name:"Clean shoe rack",                      days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],      minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
+  { name:"Clean Light Switches",                 days:["Wednesday"],                                                                minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
+  { name:"Clean Doorknobs",                      days:["Thursday"],                                                                 minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
+  { name:"Take out garbages on 2nd floor",       days:["Tuesday"],                                                                  minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
+  { name:"Pick up Basement",                     days:["Tuesday","Friday"],                                                         minTime:5,  cat:"Household Chores",                 rollable:true,  timeDie:6  },
+  { name:"Dust Basement",                        days:["Wednesday"],                                                                minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
+  { name:"Clean Bathroom sink and floor",        days:["Monday","Thursday"],                                                        minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:6  },
   { name:"Do a weekend chore",                   days:["Saturday","Sunday"],                                                        minTime:5,  cat:"Household Chores",                 rollable:true,  timeDie:8  },
   { name:"Clean a litter box",                   days:["Monday","Friday"],                                                          minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
+  // ── Big Take Care of Yourself ──
+  { name:"Clean Bedroom Desk Off",               days:["Thursday"],                                                                 minTime:5,  cat:"Big Take Care of Yourself Chores", rollable:true,  timeDie:4  },
+  { name:"Clean Bedroom Floor",                  days:["Tuesday","Sunday"],                                                         minTime:5,  cat:"Big Take Care of Yourself Chores", rollable:true,  timeDie:4  },
+  { name:"Clean Bedroom Closet",                 days:["Wednesday","Saturday"],                                                     minTime:5,  cat:"Big Take Care of Yourself Chores", rollable:true,  timeDie:6  },
+  // ── Daily Clean Up (checkbox only) ──
+  { name:"Do Dishes",                            days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],      minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Have a snack",                         days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Empty Backpack & Hang Up",             days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Clean and put away lunchbox & tupperware", days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                     minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Pack a lunch",                         days:["Monday","Tuesday","Wednesday","Thursday","Sunday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Set Alarm",                            days:["Monday","Tuesday","Wednesday","Thursday","Sunday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Hang up drum sticks & headphones",     days:["Monday","Friday"],                                                          minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Hang up basketball bag",               days:["Thursday"],                                                                 minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Set out Clothes for Tomorrow",         days:["Monday","Tuesday","Wednesday","Thursday","Sunday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
 ];
 
 // ─────────────────────────────────────────────
@@ -432,9 +446,31 @@ let state = {
 
 function roll(sides) { return Math.floor(Math.random() * sides) + 1; }
 
-function todaysChores() { return CHORES.filter(c => c.days.includes(state.day)); }
-function rollable()     { return todaysChores().filter(c => c.rollable); }
-function checkboxes()   { return todaysChores().filter(c => !c.rollable); }
+// Multi-day chores: if done on day[0], hide on day[1]
+function isSkippedToday(chore) {
+  const pair = MULTI_DAY_PAIRS[chore.name];
+  if (!pair) return false;
+  const [firstDay, secondDay] = pair;
+  if (state.day !== secondDay) return false;
+  return state.completed.has(chore.name + "__" + firstDay);
+}
+
+// Store completions with a day-scoped key for multi-day chores
+function choreKey(name) {
+  const pair = MULTI_DAY_PAIRS[name];
+  if (pair && pair.includes(state.day)) return name + "__" + state.day;
+  return name;
+}
+
+function isCompleted(name) {
+  return state.completed.has(choreKey(name));
+}
+
+function todaysChores() {
+  return CHORES.filter(c => c.days.includes(state.day) && !isSkippedToday(c));
+}
+function rollable()   { return todaysChores().filter(c => c.rollable); }
+function checkboxes() { return todaysChores().filter(c => !c.rollable); }
 
 // ─────────────────────────────────────────────
 //  ACTIONS
@@ -479,8 +515,9 @@ function resolveRoll() {
 }
 
 function toggleComplete(name) {
-  if (state.completed.has(name)) state.completed.delete(name);
-  else state.completed.add(name);
+  const key = choreKey(name);
+  if (state.completed.has(key)) state.completed.delete(key);
+  else state.completed.add(key);
   render();
 }
 
@@ -525,7 +562,7 @@ function renderRollingDice() {
 function render() {
   const total     = todaysChores().length;
   const rollCount = rollable().length;
-  const doneCount = state.completed.size;
+  const doneCount = todaysChores().filter(c => isCompleted(c.name)).length;
   const allDone   = total > 0 && doneCount === total;
 
   const chore = state.selectedChore;
@@ -557,7 +594,7 @@ function render() {
   let resultHTML = "";
   if (state.phase === "result" && chore && cfg) {
     const catCfg = CATEGORY_CONFIG[chore.cat];
-    const isDone = state.completed.has(chore.name);
+    const isDone = isCompleted(chore.name);
     const completeBtnStyle = isDone
       ? `background:${hex(catCfg.color,0.18)};color:${catCfg.color};`
       : `background:${catCfg.color};color:#000;`;
@@ -610,9 +647,24 @@ function render() {
       </div>`;
   }
 
+  // ── Rollable chores checklist (all of today's rollable chores, so nothing is hidden)
+  const rollableListHTML = rollable().map(c => {
+    const done = isCompleted(c.name);
+    const catCfg = CATEGORY_CONFIG[c.cat];
+    const isActive = state.selectedChore && state.selectedChore.name === c.name;
+    const timeInfo = c.minTime ? ` · ${c.minTime}+ min` : "";
+    return `
+      <div class="checkbox-chore${done ? " done" : ""}" onclick="toggleComplete('${c.name.replace(/'/g,"\\'")}');"
+        style="${isActive ? `border-color:${catCfg.color}88;background:${hex(catCfg.color,0.08)};` : ""}">
+        <div class="chk-box" style="${isActive && !done ? `border-color:${catCfg.color};` : ""}">${done ? "✓" : ""}</div>
+        <span class="chk-name">${catCfg.icon} ${c.name}</span>
+        <span class="chk-tag" style="${isActive ? `color:${catCfg.color};background:${hex(catCfg.color,0.15)};` : ""}">d${c.timeDie || "?"}${timeInfo}</span>
+      </div>`;
+  }).join("");
+
   // ── Checkbox chores
   const cbHTML = checkboxes().map(c => {
-    const done = state.completed.has(c.name);
+    const done = isCompleted(c.name);
     const catWord = c.cat.split(" ")[0];
     return `
       <div class="checkbox-chore${done ? " done" : ""}" onclick="toggleComplete('${c.name.replace(/'/g,"\\'")}')">
@@ -667,6 +719,12 @@ function render() {
 
     ${rollingHTML}
     ${resultHTML}
+
+    ${rollable().length > 0 ? `
+      <div class="checkbox-section" style="margin-bottom:24px;">
+        <div class="section-label" style="margin-bottom:12px;">🎲 Rollable Chores — Roll &amp; Track</div>
+        ${rollableListHTML}
+      </div>` : ""}
 
     ${checkboxes().length > 0 ? `
       <div class="checkbox-section">
