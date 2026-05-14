@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chore Quest 🎲</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a14;
+      --surface:   #12121f;
+      --surface2:  #1a1a2e;
+      --border:    #2a2a40;
+      --text:      #e8e8f0;
+      --muted:     #666680;
+      --purple:    #a78bfa;
+      --blue:      #60a5fa;
+      --green:     #4ade80;
+      --orange:    #fb923c;
+      --pink:      #f9a8d4;
+    }
+
+    html, body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+      background-image:
+        radial-gradient(ellipse at 20% 10%, #a78bfa0d 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, #60a5fa0a 0%, transparent 50%);
+    }
+
+    .app {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 28px 16px 48px;
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+      animation: fadeDown 0.6s ease both;
+    }
+    .header-dice { font-size: 48px; display: block; margin-bottom: 6px; }
+    .header h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 38px;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, var(--purple), var(--blue), var(--green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header p { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+    /* ── Day Selector ── */
+    .section-label {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .day-selector {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      animation: fadeDown 0.6s 0.1s ease both;
+    }
+    .day-btn {
+      padding: 7px 13px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: 'Nunito', sans-serif;
+      background: var(--surface2);
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .day-btn:hover { color: var(--text); background: #25253a; }
+    .day-btn.active {
+      background: var(--purple);
+      color: #fff;
+      box-shadow: 0 0 16px #a78bfa55;
+    }
+
+    /* ── Stats Bar ── */
+    .stats-bar {
+      display: flex;
+      background: var(--surface2);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+      gap: 0;
+      animation: fadeDown 0.6s 0.15s ease both;
+    }
+    .stat {
+      flex: 1;
+      text-align: center;
+    }
+    .stat-divider { width: 1px; background: var(--border); margin: 0 4px; }
+    .stat-num {
+      font-family: 'Fredoka One', cursive;
+      font-size: 26px;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .stat-label { font-size: 10px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ── Roll Button ── */
+    .roll-wrap {
+      text-align: center;
+      margin-bottom: 24px;
+      animation: fadeDown 0.6s 0.2s ease both;
+    }
+    .roll-btn {
+      padding: 16px 48px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 800;
+      font-family: 'Fredoka One', cursive;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, var(--purple), var(--blue));
+      color: #fff;
+      box-shadow: 0 0 32px #a78bfa55, 0 4px 20px #00000088;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .roll-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, #ffffff22, transparent);
+      transform: translateX(-100%);
+      transition: transform 0.4s;
+    }
+    .roll-btn:hover::after { transform: translateX(100%); }
+    .roll-btn:hover { transform: scale(1.04); box-shadow: 0 0 40px #a78bfa77, 0 6px 24px #00000099; }
+    .roll-btn:active { transform: scale(0.97); }
+    .roll-btn:disabled {
+      background: linear-gradient(90deg, #333, #444);
+      box-shadow: none;
+      cursor: default;
+      transform: none;
+    }
+
+    /* ── Rolling Animation ── */
+    .rolling-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      margin-bottom: 24px;
+      animation: fadeIn 0.2s ease;
+    }
+    .dice-row {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .die {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .die-face {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fredoka One', cursive;
+      font-size: 30px;
+      transition: transform 0.1s;
+    }
+    .die-face.spinning { animation: spin 0.15s linear infinite; }
+    .die-label { font-size: 11px; color: var(--muted); font-family: monospace; }
+    .rolling-text { margin-top: 18px; color: var(--muted); font-size: 13px; }
+
+    /* ── Result Card ── */
+    .result-card {
+      border-radius: 20px;
+      padding: 26px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    .result-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .result-header { text-align: center; margin-bottom: 22px; }
+    .result-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .result-name {
+      font-family: 'Fredoka One', cursive;
+      font-size: 26px;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .result-tag {
+      display: inline-block;
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .result-dice-row {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      margin-bottom: 20px;
+    }
+    .time-breakdown {
+      background: #00000033;
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+    .time-total {
+      font-family: 'Fredoka One', cursive;
+      font-size: 22px;
+      color: #fff;
+    }
+    .complete-btn {
+      width: 100%;
+      padding: 13px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 800;
+      font-family: 'Fredoka One', cursive;
+      letter-spacing: 0.5px;
+      transition: all 0.2s;
+    }
+    .complete-btn:active { transform: scale(0.97); }
+
+    /* ── Checkbox Chores ── */
+    .checkbox-section { animation: fadeDown 0.5s 0.3s ease both; }
+    .checkbox-chore {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .checkbox-chore:hover { background: #22223a; border-color: #3a3a55; }
+    .checkbox-chore.done {
+      background: #0a2010;
+      border-color: #4ade8033;
+    }
+    .chk-box {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      color: #fff;
+    }
+    .checkbox-chore.done .chk-box {
+      background: var(--green);
+      border-color: var(--green);
+    }
+    .chk-name {
+      flex: 1;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .checkbox-chore.done .chk-name {
+      color: var(--green);
+      text-decoration: line-through;
+    }
+    .chk-tag {
+      font-size: 10px;
+      color: var(--muted);
+      background: var(--surface);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── All Done ── */
+    .all-done {
+      text-align: center;
+      padding: 32px 24px;
+      background: linear-gradient(135deg, #052e16, #0f0f1a);
+      border: 1px solid #4ade8033;
+      border-radius: 20px;
+      box-shadow: 0 0 40px #4ade8015;
+      animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    .all-done-emoji { font-size: 56px; display: block; margin-bottom: 12px; }
+    .all-done h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 26px;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+    .all-done p { color: var(--muted); font-size: 13px; }
+
+    /* ── Animations ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.88); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes spin {
+      from { transform: rotate(-15deg) scale(1.05); }
+      to   { transform: rotate(15deg) scale(1.05); }
+    }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px currentColor; }
+      50%       { box-shadow: 0 0 40px currentColor; }
+    }
+  </style>
+</head>
+<body>
+<div class="app" id="app">
+  <!-- Rendered by JS -->
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+//  DATA
+// ─────────────────────────────────────────────
+const DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+
+const CATEGORY_CONFIG = {
+  "Bettering Yourself":               { color:"#4ade80", bg:"#052e16",  icon:"⭐", choreDie:6  },
+  "Household Chores":                 { color:"#fb923c", bg:"#1f0e04",  icon:"🏠", choreDie:8  },
+  "Big Take Care of Yourself Chores": { color:"#a78bfa", bg:"#1a0a3a",  icon:"💪", choreDie:6  },
+  "Laundry":                          { color:"#60a5fa", bg:"#0a1a3a",  icon:"👕", choreDie:4  },
+  "Daily Clean Up After Yourself":    { color:"#f9a8d4", bg:"#2a0a20",  icon:"✅", choreDie:null },
+};
+
+const CHORES = [
+  { name:"Take clean clothes upstairs",          days:["Friday","Saturday"],                                                        minTime:0,  cat:"Laundry",                          rollable:false },
+  { name:"Do Dishes",                            days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],      minTime:5,  cat:"Daily Clean Up After Yourself",    rollable:true,  timeDie:6  },
+  { name:"Have a snack",                         days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Read",                                 days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],      minTime:15, cat:"Bettering Yourself",               rollable:true,  timeDie:10 },
+  { name:"Math Homework",                        days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                         minTime:0,  cat:"Bettering Yourself",               rollable:false },
+  { name:"Empty Backpack & Hang Up",             days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Clean and put away lunchbox & tupperware", days:["Monday","Tuesday","Wednesday","Thursday","Friday"],                     minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Practice Flute",                       days:["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"],                 minTime:5,  cat:"Bettering Yourself",               rollable:true,  timeDie:6  },
+  { name:"Practice Drums",                       days:["Tuesday","Wednesday","Thursday","Saturday","Sunday"],                       minTime:10, cat:"Bettering Yourself",               rollable:true,  timeDie:6  },
+  { name:"Pack a lunch",                         days:["Monday","Tuesday","Wednesday","Thursday","Sunday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Set Alarm",                            days:["Monday","Tuesday","Wednesday","Thursday","Sunday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Clean shoe rack",                      days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],      minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Clean Light Switches",                 days:["Wednesday"],                                                                minTime:0,  cat:"Household Chores",                 rollable:false },
+  { name:"Clean Doorknobs",                      days:["Thursday"],                                                                 minTime:0,  cat:"Household Chores",                 rollable:false },
+  { name:"Hang up drum sticks & headphones",     days:["Monday","Friday"],                                                          minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Hang up basketball bag",               days:["Thursday"],                                                                 minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Take out garbages on 2nd floor",       days:["Tuesday"],                                                                  minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
+  { name:"Pick up Basement",                     days:["Tuesday","Friday"],                                                         minTime:5,  cat:"Household Chores",                 rollable:true,  timeDie:6  },
+  { name:"Clean Bedroom Desk Off",               days:["Wednesday","Thursday"],                                                     minTime:5,  cat:"Big Take Care of Yourself Chores", rollable:true,  timeDie:4  },
+  { name:"Clean Bedroom Floor",                  days:["Tuesday","Saturday"],                                                       minTime:5,  cat:"Big Take Care of Yourself Chores", rollable:true,  timeDie:4  },
+  { name:"Dust Basement",                        days:["Wednesday"],                                                                minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
+  { name:"Clean Bathroom sink and floor",        days:["Monday","Thursday"],                                                        minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:6  },
+  { name:"Clean Bedroom Closet",                 days:["Wednesday","Saturday"],                                                     minTime:5,  cat:"Big Take Care of Yourself Chores", rollable:true,  timeDie:6  },
+  { name:"Set out Clothes for Tomorrow",         days:["Monday","Tuesday","Wednesday","Thursday","Sunday"],                         minTime:0,  cat:"Daily Clean Up After Yourself",    rollable:false },
+  { name:"Put away clean clothes in bins",       days:["Saturday","Sunday"],                                                        minTime:3,  cat:"Laundry",                          rollable:true,  timeDie:4  },
+  { name:"Hang up clean clothes in closet",      days:["Saturday","Sunday"],                                                        minTime:5,  cat:"Laundry",                          rollable:true,  timeDie:4  },
+  { name:"Fold clean socks",                     days:["Friday","Saturday"],                                                        minTime:2,  cat:"Laundry",                          rollable:true,  timeDie:4  },
+  { name:"Do a weekend chore",                   days:["Saturday","Sunday"],                                                        minTime:5,  cat:"Household Chores",                 rollable:true,  timeDie:8  },
+  { name:"Clean a litter box",                   days:["Monday","Friday"],                                                          minTime:2,  cat:"Household Chores",                 rollable:true,  timeDie:4  },
+];
+
+// ─────────────────────────────────────────────
+//  STATE
+// ─────────────────────────────────────────────
+const todayIdx = (new Date().getDay() + 6) % 7; // Mon=0
+let state = {
+  day: DAYS[todayIdx],
+  phase: "idle",       // idle | rolling | result
+  selectedChore: null,
+  choreRoll: null,
+  timeRoll: null,
+  completed: new Set(),
+  animFrame: 0,
+  animTimer: null,
+};
+
+function roll(sides) { return Math.floor(Math.random() * sides) + 1; }
+
+function todaysChores() { return CHORES.filter(c => c.days.includes(state.day)); }
+function rollable()     { return todaysChores().filter(c => c.rollable); }
+function checkboxes()   { return todaysChores().filter(c => !c.rollable); }
+
+// ─────────────────────────────────────────────
+//  ACTIONS
+// ─────────────────────────────────────────────
+function selectDay(day) {
+  state.day = day;
+  state.phase = "idle";
+  state.selectedChore = null;
+  render();
+}
+
+function startRoll() {
+  if (rollable().length === 0) return;
+  state.phase = "rolling";
+  state.choreRoll = null;
+  state.timeRoll = null;
+  state.selectedChore = null;
+  state.animFrame = 0;
+  clearInterval(state.animTimer);
+  render();
+
+  state.animTimer = setInterval(() => {
+    state.animFrame++;
+    if (state.animFrame > 14) {
+      clearInterval(state.animTimer);
+      resolveRoll();
+    } else {
+      renderRollingDice();
+    }
+  }, 110);
+}
+
+function resolveRoll() {
+  const pool = rollable();
+  const chore = pool[Math.floor(Math.random() * pool.length)];
+  const cfg = CATEGORY_CONFIG[chore.cat];
+  state.choreRoll = roll(cfg.choreDie || 6);
+  state.timeRoll  = chore.timeDie ? roll(chore.timeDie) : null;
+  state.selectedChore = chore;
+  state.phase = "result";
+  render();
+}
+
+function toggleComplete(name) {
+  if (state.completed.has(name)) state.completed.delete(name);
+  else state.completed.add(name);
+  render();
+}
+
+// ─────────────────────────────────────────────
+//  RENDER HELPERS
+// ─────────────────────────────────────────────
+function hex(color, alpha) {
+  // Returns rgba from hex color
+  const r = parseInt(color.slice(1,3),16);
+  const g = parseInt(color.slice(3,5),16);
+  const b = parseInt(color.slice(5,7),16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function dieFaceHTML(sides, value, color, label) {
+  const shapes = { 4:"▲", 6:"⬡", 8:"◆", 10:"⬟", 20:"★" };
+  return `
+    <div class="die">
+      <div class="die-face" style="
+        background: radial-gradient(circle at 35% 35%, ${hex(color,0.25)}, ${hex(color,0.06)});
+        border: 2px solid ${color};
+        color: ${color};
+        box-shadow: 0 0 18px ${hex(color,0.3)};
+      ">${value !== null ? value : (shapes[sides] || "⬡")}</div>
+      <span class="die-label">d${sides}</span>
+    </div>`;
+}
+
+function renderRollingDice() {
+  const box = document.getElementById("rolling-box");
+  if (!box) return;
+  const row = box.querySelector(".dice-row");
+  if (!row) return;
+  row.innerHTML =
+    dieFaceHTML(8, roll(8), "#a78bfa", "Chore") +
+    dieFaceHTML(6, roll(6), "#60a5fa", "Time");
+}
+
+// ─────────────────────────────────────────────
+//  MAIN RENDER
+// ─────────────────────────────────────────────
+function render() {
+  const total     = todaysChores().length;
+  const rollCount = rollable().length;
+  const doneCount = state.completed.size;
+  const allDone   = total > 0 && doneCount === total;
+
+  const chore = state.selectedChore;
+  const cfg   = chore ? CATEGORY_CONFIG[chore.cat] : null;
+  const totalTime = chore && chore.rollable && chore.minTime && state.timeRoll
+    ? chore.minTime + state.timeRoll : null;
+
+  // ── Day buttons
+  const dayBtns = DAYS.map(d =>
+    `<button class="day-btn${d === state.day ? " active" : ""}" onclick="selectDay('${d}')">${d.slice(0,3)}</button>`
+  ).join("");
+
+  // ── Roll button label
+  const rollLabel = state.phase === "rolling" ? "🎲 Rolling..."
+                  : state.phase === "result"  ? "🎲 Roll Again!"
+                  :                             "🎲 Roll for Chore!";
+
+  // ── Rolling animation section
+  const rollingHTML = state.phase === "rolling" ? `
+    <div class="rolling-box" id="rolling-box">
+      <div class="dice-row">
+        ${dieFaceHTML(8, roll(8), "#a78bfa", "Chore")}
+        ${dieFaceHTML(6, roll(6), "#60a5fa", "Time")}
+      </div>
+      <p class="rolling-text">The dice are deciding your fate…</p>
+    </div>` : "";
+
+  // ── Result section
+  let resultHTML = "";
+  if (state.phase === "result" && chore && cfg) {
+    const catCfg = CATEGORY_CONFIG[chore.cat];
+    const isDone = state.completed.has(chore.name);
+    const completeBtnStyle = isDone
+      ? `background:${hex(catCfg.color,0.18)};color:${catCfg.color};`
+      : `background:${catCfg.color};color:#000;`;
+
+    let timeHTML = "";
+    if (totalTime) {
+      timeHTML = `
+        <div class="time-breakdown">
+          <span style="color:#666;">${chore.minTime} min minimum</span>
+          <span style="color:#444;margin:0 8px;">+</span>
+          <span style="color:${catCfg.color};font-weight:800;">${state.timeRoll} min rolled</span>
+          <span style="color:#444;margin:0 8px;">=</span>
+          <span class="time-total">${totalTime} min total</span>
+        </div>`;
+    } else if (chore.rollable && !chore.minTime) {
+      timeHTML = `
+        <div class="time-breakdown" style="color:#666;font-size:13px;">
+          ⏱ Do your best — no minimum required!
+        </div>`;
+    }
+
+    const choreDieSides = CATEGORY_CONFIG[chore.cat].choreDie || 6;
+
+    resultHTML = `
+      <div class="result-card" style="
+        background:linear-gradient(135deg,${catCfg.bg}cc,#0f0f1a);
+        border:1px solid ${hex(catCfg.color,0.35)};
+        box-shadow:0 0 40px ${hex(catCfg.color,0.12)};
+      ">
+        <div class="result-card::before"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:${catCfg.color};border-radius:20px 20px 0 0;"></div>
+
+        <div class="result-header">
+          <div class="result-eyebrow" style="color:${catCfg.color};">${catCfg.icon} Your Chore Quest</div>
+          <div class="result-name">${chore.name}</div>
+          <span class="result-tag" style="background:${hex(catCfg.color,0.18)};color:${catCfg.color};">${chore.cat}</span>
+        </div>
+
+        <div class="result-dice-row">
+          ${dieFaceHTML(choreDieSides, state.choreRoll, catCfg.color, "Chore Roll")}
+          ${chore.timeDie ? dieFaceHTML(chore.timeDie, state.timeRoll, catCfg.color, "Time Roll") : ""}
+        </div>
+
+        ${timeHTML}
+
+        <button class="complete-btn" onclick="toggleComplete('${chore.name.replace(/'/g,"\\'")}');"
+          style="${completeBtnStyle}">
+          ${isDone ? "✅ Completed! Nice work!" : "Mark as Complete"}
+        </button>
+      </div>`;
+  }
+
+  // ── Checkbox chores
+  const cbHTML = checkboxes().map(c => {
+    const done = state.completed.has(c.name);
+    const catWord = c.cat.split(" ")[0];
+    return `
+      <div class="checkbox-chore${done ? " done" : ""}" onclick="toggleComplete('${c.name.replace(/'/g,"\\'")}')">
+        <div class="chk-box">${done ? "✓" : ""}</div>
+        <span class="chk-name">${CATEGORY_CONFIG[c.cat].icon} ${c.name}</span>
+        <span class="chk-tag">${catWord}</span>
+      </div>`;
+  }).join("");
+
+  // ── All done banner
+  const allDoneHTML = allDone ? `
+    <div class="all-done">
+      <span class="all-done-emoji">🏆</span>
+      <h2>All Chores Complete!</h2>
+      <p>You crushed it today. Legendary status achieved.</p>
+    </div>` : "";
+
+  // ── Assemble
+  document.getElementById("app").innerHTML = `
+    <div class="header">
+      <span class="header-dice">🎲</span>
+      <h1>Chore Quest</h1>
+      <p>Roll the dice. Do the thing. Be legendary.</p>
+    </div>
+
+    <div class="section-label">Select Day</div>
+    <div class="day-selector">${dayBtns}</div>
+
+    <div class="stats-bar">
+      <div class="stat">
+        <div class="stat-num" style="color:var(--purple)">${total}</div>
+        <div class="stat-label">Total</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--orange)">${rollCount}</div>
+        <div class="stat-label">Rollable</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--green)">${doneCount}</div>
+        <div class="stat-label">Done</div>
+      </div>
+    </div>
+
+    ${rollCount > 0 ? `
+      <div class="roll-wrap">
+        <button class="roll-btn" onclick="startRoll()" ${state.phase === "rolling" ? "disabled" : ""}>
+          ${rollLabel}
+        </button>
+      </div>` : ""}
+
+    ${rollingHTML}
+    ${resultHTML}
+
+    ${checkboxes().length > 0 ? `
+      <div class="checkbox-section">
+        <div class="section-label" style="margin-bottom:12px;">✅ Checkbox Chores — Just Do 'Em</div>
+        ${cbHTML}
+      </div>` : ""}
+
+    ${allDoneHTML}
+  `;
+}
+
+// ─────────────────────────────────────────────
+//  BOOT
+// ─────────────────────────────────────────────
+render();
+</script>
+</body>
+</html>
