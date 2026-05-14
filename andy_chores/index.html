@@ -504,8 +504,26 @@ function startRoll() {
 }
 
 function resolveRoll() {
-  const pool = rollable();
-  const chore = pool[Math.floor(Math.random() * pool.length)];
+  // Only roll chores that aren't done yet
+  const pool = rollable().filter(c => !isCompleted(c.name));
+  if (pool.length === 0) {
+    // All rollable chores done — nothing to assign
+    state.phase = "idle";
+    render();
+    return;
+  }
+  // Pick a random chore, avoiding the last one shown if possible
+  let chore;
+  let attempts = 0;
+  do {
+    chore = pool[Math.floor(Math.random() * pool.length)];
+    attempts++;
+  } while (
+    pool.length > 1 &&
+    state.selectedChore &&
+    chore.name === state.selectedChore.name &&
+    attempts < 10
+  );
   const cfg = CATEGORY_CONFIG[chore.cat];
   state.choreRoll = roll(cfg.choreDie || 6);
   state.timeRoll  = chore.timeDie ? roll(chore.timeDie) : null;
@@ -710,7 +728,7 @@ function render() {
       </div>
     </div>
 
-    ${rollCount > 0 ? `
+    ${rollable().filter(c => !isCompleted(c.name)).length > 0 ? `
       <div class="roll-wrap">
         <button class="roll-btn" onclick="startRoll()" ${state.phase === "rolling" ? "disabled" : ""}>
           ${rollLabel}
